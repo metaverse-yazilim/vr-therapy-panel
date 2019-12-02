@@ -1,0 +1,480 @@
+﻿<head>
+	<style>
+		.card-wrapper {
+			display: none;
+			border: none;
+			border-top: none;
+		}
+	</style>
+</head>
+
+<body class="fixed-header ">
+	<!-- BEGIN SIDEBPANEL-->
+	<nav class="page-sidebar" data-pages="sidebar">
+		<!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
+		<div class="sidebar-overlay-slide from-top" id="appMenu">
+			<div class="row">
+				<div class="col-xs-6 no-padding">
+					<a href="#" class="p-l-40">
+						<img src="../Images/demo/social_app.svg" alt="socail">
+					</a>
+				</div>
+				<div class="col-xs-6 no-padding">
+					<a href="#" class="p-l-10">
+						<img src="../Images/demo/email_app.svg" alt="socail">
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 m-t-20 no-padding">
+					<a href="#" class="p-l-40">
+						<img src="../Images/demo/calendar_app.svg" alt="socail">
+					</a>
+				</div>
+				<div class="col-xs-6 m-t-20 no-padding">
+					<a href="#" class="p-l-10">
+						<img src="../Images/demo/add_more.svg" alt="socail">
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- END SIDEBAR MENU TOP TRAY CONTENT-->
+		<!-- BEGIN SIDEBAR MENU HEADER-->
+		<div class="sidebar-header">
+			<img src="../Images/logo_white.png" alt="logo" class="brand" data-src="../Images/logo_white.png" data-src-retina="../Images/logo_white_2x.png" width="78" height="22">
+			<div class="sidebar-header-controls">
+				<button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20 hidden-md-down" data-pages-toggle="#appMenu">
+					<i class="fa fa-angle-down fs-16"></i>
+				</button>
+				<button type="button" class="btn btn-link hidden-md-down" data-toggle-pin="sidebar">
+					<i class="fa fs-12"></i>
+				</button>
+			</div>
+		</div>
+		<!-- END SIDEBAR MENU HEADER-->
+		<!-- START SIDEBAR MENU -->
+		<div class="sidebar-menu">
+			<!-- BEGIN SIDEBAR MENU ITEMS-->
+			<ul class="menu-items">
+				<li class="m-t-30 ">
+					<a href="../loggedin" class="detailed">
+						<span class="title">Hasta Listesi</span>
+					</a>
+					<span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
+				</li>
+				<li class="">
+					<a href="../patregister" class="detailed">
+						<span class="title">Hasta Kaydı</span>
+					</a>
+					<span class="icon-thumbnail"><i class="pg-plus"></i></span>
+				</li>
+				<li class="">
+					<a href="social.html"><span class="title">Seans Ekle</span></a>
+					<span class="icon-thumbnail"><i class="pg-calender"></i></span>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<span class="title">Calendar</span>
+						<span class=" arrow"></span>
+					</a>
+					<span class="icon-thumbnail"><i class="pg-calender"></i></span>
+					<ul class="sub-menu">
+						<li class="">
+							<a href="calendar.html">Basic</a>
+							<span class="icon-thumbnail">c</span>
+						</li>
+						<li class="">
+							<a href="calendar_lang.html">Languages</a>
+							<span class="icon-thumbnail">L</span>
+						</li>
+						<li class="">
+							<a href="calendar_month.html">Month</a>
+							<span class="icon-thumbnail">M</span>
+						</li>
+						<li class="">
+							<a href="calendar_lazy.html">Lazy load</a>
+							<span class="icon-thumbnail">La</span>
+						</li>
+						<li class="">
+							<a href="http://pages.revox.io/dashboard/2.1.0/doc/#calendar" target="_blank">Documentation</a>
+							<span class="icon-thumbnail">D</span>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="builder.html">
+						<span class="title">Builder</span>
+					</a>
+					<span class="icon-thumbnail"><i class="pg-layouts"></i></span>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<span class="title">Forms</span>
+						<span class=" arrow"></span>
+					</a>
+					<span class="icon-thumbnail"><i class="pg-form"></i></span>
+					<ul class="sub-menu">
+						<li class="">
+							<a href="form_elements.html">Form Elements</a>
+							<span class="icon-thumbnail">fe</span>
+						</li>
+						<li class="">
+							<a href="form_layouts.html">Form Layouts</a>
+							<span class="icon-thumbnail">fl</span>
+						</li>
+						<li class="">
+							<a href="form_wizard.html">Form Wizard</a>
+							<span class="icon-thumbnail">fw</span>
+						</li>
+					</ul>
+				</li>
+
+				<li class="">
+					<a href="javascript:;">
+						<span class="title">Menu Levels</span>
+						<span class="arrow"></span>
+					</a>
+					<span class="icon-thumbnail"><i class="pg-menu_lv"></i></span>
+					<ul class="sub-menu">
+						<li>
+							<a href="javascript:;">Level 1</a>
+							<span class="icon-thumbnail">L1</span>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span class="title">Level 2</span>
+								<span class="arrow"></span>
+							</a>
+							<span class="icon-thumbnail">L2</span>
+							<ul class="sub-menu">
+								<li>
+									<a href="javascript:;">Sub Menu</a>
+									<span class="icon-thumbnail">Sm</span>
+								</li>
+								<li>
+									<a href="ujavascript:;">Sub Menu</a>
+									<span class="icon-thumbnail">Sm</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<!-- END SIDEBAR MENU -->
+	</nav>
+	<!-- END SIDEBAR -->
+	<!-- END SIDEBPANEL-->
+	<!-- START PAGE-CONTAINER -->
+	<div class="page-container ">
+		<!-- START HEADER -->
+		<div class="header ">
+			<!-- START MOBILE SIDEBAR TOGGLE -->
+			<a href="#" class="btn-link toggle-sidebar hidden-lg hidden-md pg-menu" data-toggle="sidebar"></a>
+			<!-- END MOBILE SIDEBAR TOGGLE -->
+			<div class="">
+				<div class="brand inline ">
+					<img src="../Images/logo.png" alt="logo" data-src="../Images/logo.png" data-src-retina="../Images/logo_2x.png" width="78" height="22">
+				</div>
+				<!-- START NOTIFICATION LIST -->
+				<!-- END NOTIFICATIONS LIST -->
+			</div>
+			<div class="d-flex align-items-center">
+				<!-- START User Info-->
+				<div class="pull-left p-r-10 fs-14 font-heading hidden-md-down">
+					<span class="semi-bold">David</span> <span class="text-master">Nest</span>
+				</div>
+				<div class="dropdown pull-right hidden-md-down">
+					<button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="thumbnail-wrapper d32 circular inline">
+							<img src="../Images/profiles/avatar.jpg" alt="" data-src="../Images/profiles/avatar.jpg" data-src-retina="../Images/profiles/avatar_small2x.jpg" width="32" height="32">
+						</span>
+					</button>
+					<div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
+						<a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>
+						<a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>
+						<a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>
+						<a ng-click="userLogout()" class="clearfix bg-master-lighter dropdown-item">
+							<span class="pull-left">Logout</span>
+							<span class="pull-right"><i class="pg-power"></i></span>
+						</a>
+					</div>
+				</div>
+				<!-- END User Info-->
+				<!--<a href="#" class="header-icon pg pg-alt_menu btn-link m-l-10 sm-no-margin d-inline-block" data-toggle="quickview" data-toggle-element="#quickview"></a>-->
+			</div>
+		</div>
+		<!-- END HEADER -->
+		<!-- START PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrapper ">
+			<!-- START PAGE CONTENT -->
+			<div class="content ">
+				<!-- START JUMBOTRON -->
+				<div class="jumbotron" data-pages="parallax">
+					<div class=" container-fluid   container-fixed-lg sm-p-l-0 sm-p-r-0">
+						<div style="text-align:center; font-size:xx-large; font-family:'Times New Roman', Times, serif; font-weight:400">
+							{{testa.newsessionername}} {{testa.newsessionersurname}} için seans senaryosu seçiniz.
+						</div>
+					</div>
+				</div>
+				<!-- END JUMBOTRON -->
+				<!-- START CONTAINER FLUID -->
+				<div class=" container-fluid   container-fixed-lg">
+					<!-- BEGIN PlACE PAGE CONTENT HERE -->
+					<div class="row">
+						<!-- İLK SÜTUN BAŞLANGIÇ -->
+						<div class="col-lg-4">
+							<div class="sm-m-l-5 sm-m-r-5">
+								<div class="card card-default">
+									<div class="card-block" style="height:114vh">
+										<div class="card-header">
+											<div class="card-title">
+												AMFİ 100
+											</div>
+										</div>
+										<div class="card-block">
+											<button class="btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Amfi100')" aria-haspopup="true" aria-expanded="false">
+												<span class="thumbnail-wrapper">
+													<img src="../Images/amfi100.png" alt="" data-src="../Images/amfi100.png" data-src-retina="../Images/amfi100.png" width="1920" height="1080">
+												</span>
+											</button>
+										</div>
+
+										<div class="card-header">
+											<div class="card-title">
+												AMFİ 50
+											</div>
+										</div>
+										<div class="card-block">
+											<button class="btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Amfi50')" aria-haspopup="true" aria-expanded="false">
+												<span class="thumbnail-wrapper">
+													<img src="../Images/amfi50.png" alt="" data-src="../Images/amfi50.png" data-src-retina="../Images/amfi50.png" width="1920" height="1080">
+												</span>
+											</button>
+										</div>
+
+										<div class="card-header">
+											<div class="card-title">
+												Akademik Toplantı
+											</div>
+										</div>
+										<div class="card-block">
+											<button class="btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Ac_Me')" aria-haspopup="true" aria-expanded="false">
+												<span class="thumbnail-wrapper">
+													<img src="../Images/Ac_Me.png" alt="" data-src="../Images/Ac_Me.png" data-src-retina="../Images/Ac_Me.png" width="640" height="480">
+												</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- İLK SÜTUN SON -->
+						<!-- İKİNCİ SÜTUN BAŞLANGIÇ -->
+						<div class="col-lg-4">
+							<div class="sm-m-l-5 sm-m-r-5">
+								<div class="card card-default">
+									<div class="card-block" style="height:114vh">
+										<div class="card-header">
+											<div class="card-title">
+												Akademik Mülakat
+											</div>
+										</div>
+										<div class="card-block">
+											<button class="btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Ac_Int')" aria-haspopup="true" aria-expanded="false">
+												<span class="thumbnail-wrapper">
+													<img src="../Images/Ac_Int.png" alt="" data-src="../Images/Ac_Int.png" data-src-retina="../Images/Ac_Int.png" width="640" height="480">
+												</span>
+											</button>
+										</div>
+
+										<div class="card-header">
+											<div class="card-title">
+												İş Mülakatı
+											</div>
+										</div>
+										<div class="card-block">
+											<button class="btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Job_Int')" aria-haspopup="true" aria-expanded="false">
+												<span class="thumbnail-wrapper">
+													<img src="../Images/Job_Int.png" alt="" data-src="../Images/Job_Int.png" data-src-retina="../Images/Job_Int.png" width="640" height="480">
+												</span>
+											</button>
+										</div>
+
+										<div class="card-header">
+											<div class="card-title">
+												İş Toplantısı
+											</div>
+										</div>
+										<div class="card-block">
+											<button class="btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Job_Me')" aria-haspopup="true" aria-expanded="false">
+												<span class="thumbnail-wrapper">
+													<img src="../Images/Job_Me.png" alt="" data-src="../Images/Job_Me.png" data-src-retina="../Images/Job_Me.png" width="480" height="360">
+												</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- İKİNCİ SÜTUN SON -->
+						<!-- AÇIKLAMA SÜTUNU BAŞLANGIÇ -->
+						<div class="col-lg-4">
+							<div class="sm-m-l-5 sm-m-r-5">
+								<div class="card card-default">
+
+									<div class="card-block">
+										<div class="card-header">
+											<div class="card-title">
+												Seans Açıklaması:
+											</div>
+										</div>
+
+										<div class="card-block ">
+											<div id="Amfi50" class="card-wrapper">
+												<p>Amfi50</p>
+												<p>nedir ne değildir</p>
+												<a class="btn btn-primary btn-cons m-t-10" href="../loggedin">Geri</a><a class="btn btn-primary btn-cons m-t-10 pull-right" href="../amfi50settings">Seans Ayarları</a>
+											</div>
+											<div id="Amfi100" class="card-wrapper">
+												<p>Amfi100</p>
+												<a class="btn btn-primary btn-cons m-t-10" href="../loggedin">Geri</a><a class="btn btn-primary btn-cons m-t-10 pull-right" href="../amfi100settings">Seans Ayarları</a>
+											</div>
+											<div id="Ac_Me" class="card-wrapper">
+												<p>Ac_Me</p>
+												<a class="btn btn-primary btn-cons m-t-10" href="../loggedin">Geri</a><a class="btn btn-primary btn-cons m-t-10 pull-right" href="../ac_me_settings">Seans Ayarları</a>
+											</div>
+											<div id="Ac_Int" class="card-wrapper">
+												<p>Ac_Int</p>
+												<a class="btn btn-primary btn-cons m-t-10" href="../loggedin">Geri</a><a class="btn btn-primary btn-cons m-t-10 pull-right" href="../ac_int_settings">Seans Ayarları</a>
+											</div>
+											<div id="Job_Int" class="card-wrapper">
+												<p>Job_Int</p>
+												<a class="btn btn-primary btn-cons m-t-10" href="../loggedin">Geri</a><a class="btn btn-primary btn-cons m-t-10 pull-right" href="../job_int_settings">Seans Ayarları</a>
+											</div>
+											<div id="Job_Me" class="card-wrapper">
+												<p>Job_Me</p>
+												<a class="btn btn-primary btn-cons m-t-10" href="../loggedin">Geri</a><a class="btn btn-primary btn-cons m-t-10 pull-right" href="../job_me_settings">Seans Ayarları</a>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- AÇIKLAMA SÜTUNU SON -->
+					</div>
+					<!-- END PLACE PAGE CONTENT HERE -->
+				</div>
+				<!-- END CONTAINER FLUID -->
+			</div>
+			<!-- END PAGE CONTENT -->
+			<!-- START COPYRIGHT -->
+			<!-- START CONTAINER FLUID -->
+			<!-- START CONTAINER FLUID -->
+			<div class=" container-fluid  container-fixed-lg footer">
+				<div class="copyright sm-text-center">
+					<p class="small no-margin pull-left sm-pull-reset">
+						<span class="hint-text">Copyright &copy; 2018 </span>
+						<span class="font-montserrat">METAVERSE</span>.
+						<span class="hint-text">All rights reserved. </span>
+						<span class="sm-block"><a href="#" class="m-l-10 m-r-10">Terms of use</a> <span class="muted">|</span> <a href="#" class="m-l-10">Privacy Policy</a></span>
+					</p>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!-- END COPYRIGHT -->
+		</div>
+		<!-- END PAGE CONTENT WRAPPER -->
+	</div>
+	<!-- END PAGE CONTAINER -->
+	<div ng-init="init()"></div>
+	<!-- END PAGE LEVEL JS -->
+	<script>
+		function openlogin(evt, usertype) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("card-wrapper");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(usertype).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+	</script>
+</body>
+
+
+<uib-tabset active="0" justified="true">
+	<!-- Diyalog sekmesi BAŞLANGIÇ -->
+	<uib-tab index="0" heading="Diyalog">
+		<div class="card card-default p-b-0 m-b-0" style="height:48.3vh">
+			<uib-tabset type="pills" active="0" justified="true">
+				<uib-tab index="0" heading="Giriş">
+					<div class="card-block p-t-20">
+						<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left m-b-20 m-t-10" style="font-size:16px;" ng-click="question006()"> Merhaba, hoş geldiniz! Öncelikle şirketimize göstermiş <br />olduğunuz ilgi için çok teşekkür ederiz. Özgeçmişinizi inceledik. <br />Eğitim ve kariyer anlamında çok başarılı ve azimli bir tablo <br />çiziyorsunuz. Sizi daha yakından tanımak istedik.</button>
+						<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left m-b-20" style="font-size:16px;" ng-click="question007()"> Merhaba, hoş geldiniz! Öncelikle şirketimize göstermiş <br />olduğunuz ilgi için çok teşekkür ederiz. Oldukça zorlu bir <br />başvuru süreci sonrası güçlü adaylar arasından seçilerek bu <br />mülakata gelmeyi başardınız. Sizi daha yakından tanımak için <br />birkaç soru sorarak başlamak istiyoruz.</button>
+						<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left m-b-20" style="font-size:16px;" ng-click="question008()"> Merhaba hoş geldiniz! Öncelikle şirketimize göstermiş <br />olduğunuz ilgi için çok teşekkür ederiz. Birçok iddialı aday <br />arasından seçilerek bu mülakata gelmeye hak kazandınız. <br />Şirket olarak sizi daha yakından tanımak istiyoruz.</button>
+					</div>
+				</uib-tab>
+				<uib-tab index="1" heading="Sorular">
+					<div class="card-block p-t-30">
+						<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left m-b-30 m-t-10" style="font-size:16px;" ng-click="question009()"> Bize kendinizden biraz bahseder misiniz? Kendinizi güçlü <br />bulduğunuz yönlerinizden, gelişime açık olduğunu <br />düşündüğünüz özelliklerinizden bahsedip sizi neden işe <br />almalıyız anlatır mısınız?</button>
+						<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left m-b-30" style="font-size:16px;" ng-click="question010()"> Bize ilgilendiğiniz çalışma alanlarından, bu pozisyona başvurma <br />nedenlerinizden ve işe kabul edilirseniz ekibimize <br />sağlayabileceğiniz katkılardan bahsedebilir misiniz? </button>
+						<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left m-b-30" style="font-size:16px;" ng-click="question011()"> Bize bu pozisyonun genel kariyer hedeflerinizle ne kadar <br />örtüştüğünü, önümüzdeki yıl kendinizi kişisel anlamda <br />geliştirmek için neler yapmayı planladığınızı, ve önümüzdeki <br />beş yıl içinde kendinizi nerede gördüğünüzü anlatır mısınız? </button>
+					</div>
+				</uib-tab>
+			</uib-tabset>
+		</div>
+	</uib-tab>
+	<!-- Diyalog sekmesi SON -->
+	<!-- Onay/Red sekmesi BAŞLANGIÇ -->
+	<uib-tab index="1" heading="Onay/Red">
+		<div class="card card-default p-b-0 m-b-0" style="height:48.3vh">
+			<div class="card-block p-t-30">
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left m-b-20 m-t-50" style="font-size:16px;" ng-click="question079()"> Hıhı. </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left m-b-20" style="font-size:16px;" ng-click="question080()"> Evet. </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left m-b-20" style="font-size:16px;" ng-click="question081()"> Doğru. </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left m-b-20" style="font-size:16px;" ng-click="question082()"> I-ıh. </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left m-b-20" style="font-size:16px;" ng-click="question083()"> Hayır. </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left" style="font-size:16px;" ng-click="question084()"> Katılmıyorum. </button>
+			</div>
+		</div>
+	</uib-tab>
+	<!-- Onay/Red sekmesi SON -->
+	<!-- Geri Bildirim sekmesi BAŞLANGIÇ -->
+	<uib-tab index="2" heading="G.Bildirim">
+		<div class="card card-default p-b-0 m-b-0" style="height:48.3vh">
+			<div class="card-block p-t-30">
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left m-b-20 m-t-50" style="font-size:16px;" ng-click="question036()"> Kendinizi çok iyi anlattınız.</button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left m-b-20" style="font-size:16px;" ng-click="question037()"> Sizinle tanışmak büyük bir memnuniyetti.</button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left m-b-20" style="font-size:16px;" ng-click="question038()"> Başarılarınızın devamı diliyorum.</button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left m-b-20" style="font-size:16px;" ng-click="question054()"> Kendinizi biraz daha net anlatmalısınız. </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left m-b-20" style="font-size:16px;" ng-click="question055()"> Biraz daha tecrübeye ihtiyacınız var sanki.</button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left" style="font-size:16px;" ng-click="question056()"> Bu pozisyona çok uygun olduğunuzu düşünmüyorum.</button>
+			</div>
+		</div>
+	</uib-tab>
+	<!-- Geri Bildirim sekmesi SON -->
+	<!-- Konuşurken Bölmek sekmesi BAŞLANGIÇ -->
+	<uib-tab index="3" heading="Bölmek">
+		<div class="card card-default p-b-0 m-b-0" style="height:48.3vh">
+			<div class="card-block p-t-10">
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" style="font-size:16px;" ng-click="question072()"> Sesinizi çok net duyamıyorum. Daha yüksek sesle konuşur <br />musunuz? </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" style="font-size:16px;" ng-click="question073()"> Bir dakika lütfen, bir süredir ne dediğinizi anlayamıyorum. <br />Tane tane konuşur musunuz? </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" style="font-size:16px;" ng-click="question074()"> Pardon sanırım çok heyecanlısınız. Biraz daha sakin anlatır <br />mısınız? </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" style="font-size:16px;" ng-click="question075()"> Çok özür dileyerek böleceğim, biraz daha net konuşur musunuz, <br />anlam bütünlüğü kurmakta güçlük çekiyorum. </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" style="font-size:16px;" ng-click="question076()"> Pardon ama baya karışık anlatıyorsunuz. Söyleyeceklerinizi <br />daha kısa ve öz ifade edebilir misiniz? </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" style="font-size:16px;" ng-click="question077()"> Ne demek istediğinizi tam anlamadım. Konuyu biraz daha açar <br />mısınız? </button>
+				<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left " style="font-size:16px;" ng-click="question078()"> Tüm anlatacaklarınız bu kadar mıydı? Biraz daha detaylı <br />anlatabilir misiniz? </button>
+			</div>
+		</div>
+	</uib-tab>
+	<!-- Konuşurken Bölmek sekmesi SON -->
+</uib-tabset>

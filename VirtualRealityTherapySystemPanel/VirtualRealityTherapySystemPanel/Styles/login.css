@@ -1,0 +1,325 @@
+﻿.hiddenthing {
+    display: none;
+}
+
+.btn-green {
+    background-color: #27b8f7;
+    color: white;
+    border-radius: 2px;
+    font-family: buttonfont;
+    font-size: 20px;
+    justify-content: center;
+}
+
+    .btn-green:hover {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:visited {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:focus {
+        background-color: #27b8f7;
+        color: white;
+    }
+
+    .btn-green:active {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+.btn:focus, .btn:focus:active, .btn.active:focus {
+    color: white;
+}
+
+.btn-black {
+    background-color: #000000;
+    color: white;
+    border-radius: 2px;
+    font-family: buttonfont;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .btn-black:hover {
+        color: white;
+        background-color: #2f2f2f;
+    }
+
+.btn-gray {
+    background-color: #a8a8aa;
+    color: white;
+    border-radius: 2px;
+    font-family: buttonfont;
+    font-size: 20px;
+    justify-content: center;
+}
+
+    .btn-gray:hover {
+        color: white;
+        background-color: #b9b9be;
+    }
+
+
+.btn-primary {
+    border-radius: 0px;
+}
+
+/*.bg-pica {
+    background-image: url('../Images/stock.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+
+.bg-pica {
+    background: #24aef2;
+    background: -moz-linear-gradient(top, #24aef2 0%, #128ac5 100%);
+    background: -webkit-linear-gradient(top, #24aef2 0%,#128ac5 100%);
+    background: linear-gradient(to bottom, #24aef2 0%,#128ac5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24aef2', endColorstr='#128ac5',GradientType=0 );
+}
+
+.bg-picb {
+    background: #24aef2;
+    background: -moz-linear-gradient(top, #24aef2 0%, #128ac5 100%);
+    background: -webkit-linear-gradient(top, #24aef2 0%,#128ac5 100%);
+    background: linear-gradient(to bottom, #24aef2 0%,#128ac5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24aef2', endColorstr='#128ac5',GradientType=0 );
+}
+
+#imglogin {
+    position: absolute;
+    left: 760px;
+    top: calc(436px + 55 * ((100vw - 1600px) /320));
+    width: calc(650px + 217 * ((100vw - 1600px) /320));
+    height: calc(344px + 115 * ((100vw - 1600px) /320));
+    max-height: 531px;
+    min-height: 354px;
+    max-width: 945px;
+    min-width: 630px;
+}
+
+.white {
+    color: rgb(255,255,255);
+    margin: 0px auto 0px auto;
+}
+
+.text1 {
+    font-size: calc(48px + 20 * ((100vw - 1600px) /320));
+    font-family: poppinsbold;
+    line-height: calc(48px + 20 * ((100vw - 1600px) /320));
+}
+
+.text2 {
+    font-size: 22px;
+    font-family: nunito;
+}
+
+
+.mytitle {
+    position: absolute;
+    width: calc(645px + 255 * ((100vw - 1600px) /320));
+    left: 756px;
+    top: 95px;
+    height: auto;
+    min-width: 645px;
+}
+
+.mytitle2 {
+    position: absolute;
+    width: 670px;
+    left: 759px;
+    top: calc(265px + 55 * ((100vw - 1600px) /320));
+    line-height: 32px;
+    min-width: 600px;
+    height: auto;
+}
+
+#detaylar {
+    position: absolute;
+    width: 235px;
+    left: 760px;
+    top: calc(343px + 55 * ((100vw - 1600px) /320));
+    height: 50px;
+    border: none;
+}
+
+#detaylar2 {
+    position: absolute;
+    width: 335px;
+    left: 760px;
+    top: 463px;
+    height: 40px;
+    border: none;
+}
+
+.mycopyright {
+    padding-top: calc(30px + 45 * ((100vw - 1600px) /320));
+    padding-bottom: 0px;
+}
+
+.centerized {
+    margin-left: 130px;
+    margin-right: 65px;
+    margin-top: calc(100px + 45 * ((100vw - 1600px) /320));
+    padding: 0;
+    width: 480px;
+    position: absolute;
+}
+
+div.tab {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.mylogin {
+    background-image: none;
+    background-color: rgb(255,255,255);
+    width: 675px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: 0px;
+    /*border: 2px solid #5e5f61;*/
+}
+
+#Danisan {
+    display: none;
+}
+
+body {
+    overflow-x: hidden
+}
+
+#logovr {
+    margin-bottom: calc(40px + 20 * ((100vw - 1600px) /320));
+}
+
+#terapist {
+    width: 150px;
+    height: 50px;
+    border: none;
+}
+
+#danisan {
+    width: 150px;
+    height: 50px;
+    border: none;
+}
+
+#loginform {
+    margin-top: calc(90px + 20 * ((100vw - 1600px) /320));
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-top: calc(20px + 10 * ((100vw - 1600px) /320));
+    padding-right: 50px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.usermargin {
+    margin-bottom: calc(30px + 10 * ((100vw - 1600px) /320));
+}
+
+.passmargin {
+    margin-bottom: calc(35px + 15 * ((100vw - 1600px) /320));
+}
+
+#giris {
+    width: 150px;
+    height: 50px;
+    border: none;
+    margin-top: calc(30px + 10 * ((100vw - 1600px) /320));
+    margin-bottom: 10px;
+}
+
+#send {
+    width: 150px;
+    height: 50px;
+    border: none;
+}
+
+.nunito {
+    font-family: nunito;
+}
+
+.redtext {
+    color: #cc0000;
+    font-size: 16px;
+}
+
+    .redtext:hover {
+        color: #f11111;
+    }
+
+.blacktext {
+    color: #000000;
+    font-size: 14px;
+}
+
+.blactext:hover {
+    color: #000000;
+}
+
+a.blacktext:focus, a.blacktext:active, a.blacktext:hover {
+    color: #000000;
+}
+
+.inputbox {
+    font-size: 20px;
+    justify-content: center;
+}
+
+#username {
+    height: 39px;
+    justify-content: center;
+}
+
+#password {
+    height: 39px;
+    justify-content: center;
+}
+
+.modal {
+    text-align: center;
+    padding: 0 !important;
+}
+
+    .modal:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -4px;
+    }
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.modal-body {
+    padding-bottom: 40px;
+}
+
+.modal-footer {
+    margin-bottom: 25px;
+}
+
+#forgothead {
+    font-size: 20px;
+    font-family: poppinsbold;
+    margin-top: 15px;
+    margin-bottom: 18px;
+}

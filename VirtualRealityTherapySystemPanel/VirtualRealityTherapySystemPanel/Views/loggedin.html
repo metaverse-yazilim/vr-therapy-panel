@@ -1,0 +1,451 @@
+﻿<body class="fixed-header ">
+	<link href="../Styles/loggedin.css" rel="stylesheet" type="text/css" />
+	<div ng-init="initer()"></div>
+	<!-- BEGIN SIDEBPANEL-->
+	<nav class="page-sidebar" data-pages="sidebar">
+		<!-- BEGIN SIDEBAR MENU HEADER-->
+		<div class="sidebar-header">
+			<img src="../Images/vr-social-logo-oneline-gri2.png" width="158" height="25">
+			<div class="sidebar-header-controls">
+				<button type="button" class="btn btn-link hidden-md-down" data-toggle-pin="sidebar">
+					<i class="fa fs-12"></i>
+				</button>
+			</div>
+		</div>
+		<!-- END SIDEBAR MENU HEADER-->
+		<!-- START SIDEBAR MENU -->
+		<div class="sidebar-menu">
+			<!-- BEGIN SIDEBAR MENU ITEMS-->
+			<ul class="menu-items">
+				<li class="m-t-30 ">
+					<a href="../#/loggedin" class="detailed">
+						<span class="title nunito">Danışan Listesi</span>
+					</a>
+					<span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
+				</li>
+				<li class="">
+					<a href="../#/patregister" class="detailed">
+						<span class="title nunito">Danışan Ekle</span>
+					</a>
+					<span class="icon-thumbnail"><i class="pg-plus"></i></span>
+				</li>
+				<li class="">
+					<a href="../#/newsession"><span class="title nunito">Seans Ekle</span></a>
+					<span class="icon-thumbnail"><i class="pg-clock"></i></span>
+				</li>
+				<!--<li>
+					<a href=""><span class="title">Takvim</span></a>
+					<span class="icon-thumbnail"><i class="pg-calender"></i></span>
+				</li>
+				<li class="">
+					<a href=""><span class="title">Ayarlar</span></a>
+					<span class="icon-thumbnail"><i class="pg-settings"></i></span>
+				</li>-->
+				<li>
+					<a data-toggle="modal" data-target="#exitModal"><span class="title nunito">Çıkış Yap</span></a>
+					<span class="icon-thumbnail"><i class="pg-power"></i></span>
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<!-- END SIDEBAR MENU -->
+	</nav>
+	<!-- END SIDEBAR -->
+	<!-- END SIDEBPANEL-->
+	<!-- START PAGE-CONTAINER -->
+	<div class="page-container " style="height:92vh">
+		<!-- START HEADER -->
+		<div class="header ">
+			<!-- START MOBILE SIDEBAR TOGGLE -->
+			<a href="#" class="btn-link toggle-sidebar hidden-lg hidden-md pg-menu" data-toggle="sidebar"></a>
+			<!-- END MOBILE SIDEBAR TOGGLE -->
+			<div class="">
+				<div class="brand inline ">
+					<img src="../Images/vr-social-logo-oneline.png" width="158" height="25">
+				</div>
+				<!-- START NOTIFICATION LIST -->
+				<!-- END NOTIFICATIONS LIST -->
+			</div>
+			<div class="d-flex align-items-center">
+				<!-- START User Info-->
+				<div class="dropdown pull-left fs-14 font-heading hidden-md-down">
+					<button class="dropdown-toggle btn btn-green" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="semi-bold">{{testa.name}} {{testa.surname}}</span> <span class="semi-bold"></span>
+					</button>
+					<div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu" id="minipop">
+						<p class="nunito"><span style="font-family:poppinsemibold;">Aktif Plan:</span> <span class="pull-right">{{testa.total}} seans/ay </span></p>
+						<p class="nunito"><span style="font-family:poppinsemibold;">Kalan Seans:</span> <span class="pull-right">{{testa.last}}</span></p>
+						<p class="nunito"><span style="font-family:poppinsemibold;">Dönem Bitişi:</span> <span class="pull-right">{{testa.day| date:'dd MMM yyyy'}}</span></p>
+						<p>
+							<a href="http://metaverse.com.tr/paket/"><span style="font-family:poppinsemibold;">Plan Değiştir</span><span class="pull-right"><i class="pg-link"></i></span></a>
+						</p>
+						<p>
+							<a href="http://metaverse.com.tr/#iletisim"><span style="font-family:poppinsemibold;">Bize Ulaşın</span><span class="pull-right"><i class="pg-mail"></i></span></a>
+						</p>
+					</div>
+				</div>
+				<!--<div class="dropdown pull-right hidden-md-down">
+					<div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
+						<a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>
+						<a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>
+						<a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>
+						<a ng-click="userLogout()" class="clearfix bg-master-lighter dropdown-item">
+							<span class="pull-left">Logout</span>
+							<span class="pull-right"><i class="pg-power"></i></span>
+						</a>
+					</div>
+				</div>-->
+				<!-- END User Info-->
+				<!--<a href="#" class="header-icon pg pg-alt_menu btn-link m-l-10 sm-no-margin d-inline-block" data-toggle="quickview" data-toggle-element="#quickview"></a>-->
+			</div>
+		</div>
+		<!-- END HEADER -->
+		<!-- START PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrapper ">
+			<!-- START PAGE CONTENT -->
+			<div class="content ">
+				<!-- START JUMBOTRON -->
+				<!--<div class="jumbotron" data-pages="parallax">
+					<div class=" container-fluid container-fixed-lg sm-p-l-0 sm-p-r-0">
+					</div>
+				</div>-->
+				<!-- END JUMBOTRON -->
+				<!-- START CONTAINER FLUID -->
+				<div class=" container-fluid container-fixed-lg">
+					<!-- BEGIN PlACE PAGE CONTENT HERE -->
+					<!-- START Danışan tablosu -->
+					<div id="Faketable"><h4 style="font-family:poppinsemibold;">Danışan Listesi</h4></div>
+					<div id="Table" class="center-table">
+						<div class="text-center">
+							<div style="min-height:100%; min-width:100%">
+								<div>
+									<!-- ARAMA BAR'I BAŞLANGIÇ -->
+									<form>
+										<div class="form-group col-md-5 pull-left p-l-0">
+											<div class="input-group">
+												<div class="input-group-addon"><i class="fa fa-search"></i></div>
+												<input type="text" class="form-control" placeholder="Danışan Ara" ng-model="searchPatient" ng-change="filterfunc()">
+											</div>
+										</div>
+									</form>
+									<!-- ARAMA BAR'I SON -->
+									<!-- TABLO BAŞLANGIÇ -->
+									<table class="table table-hover" id="basicTable">
+										<!-- TABLO BAŞLIKLAR BAŞLANGIÇ -->
+										<thead>
+											<tr>
+												<th class="" ng-click="sortType = 'username'; sortReverse = !sortReverse">
+													Kullanıcı Adı
+													<span ng-show="sortType == 'username' && !sortReverse" class="fa fa-caret-down"></span>
+													<span ng-show="sortType == 'username' && sortReverse" class="fa fa-caret-up"></span>
+												</th>
+												<th class="p-l-15" ng-click="sortType = 'birth'; sortReverse = !sortReverse">
+													Doğum Tarihi
+													<span ng-show="sortType == 'birth' && !sortReverse" class="fa fa-caret-down"></span>
+													<span ng-show="sortType == 'birth' && sortReverse" class="fa fa-caret-up"></span>
+												</th>
+												<th class="p-l-20" ng-click="sortType = 'next_session'; sortReverse = !sortReverse">
+													Sıradaki Seans
+													<span ng-show="sortType == 'next_session' && !sortReverse" class="fa fa-caret-down"></span>
+													<span ng-show="sortType == 'next_session' && sortReverse" class="fa fa-caret-up"></span>
+												</th>
+											</tr>
+										</thead>
+										<!-- TABLO BAŞLIKLAR SON -->
+										<tbody ng-repeat="x in test.patient | filter:searchPatient | orderBy:sortType:sortReverse | startFrom:((currentPage-1)*pageSize) | limitTo:pageSize  " ng-switch="isSelPatient($index)" ng-click="selpat($index)">
+											<tr ng-class="{sel:selIdx==$index}">
+												<td ng-controller="loggedin_controller" data-toggle="modal" data-target="#myModal" id="someId">{{x.username}}</td>
+												<td ng-controller="loggedin_controller" data-toggle="modal" data-target="#myModal" id="someId">{{x.birth| date:'dd MMM yyyy'}} </td>
+												<td ng-controller="loggedin_controller" data-toggle="modal" data-target="#myModal" id="someId">{{x.next_session| date:'dd MMM yyyy H:mm'}}</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- TABLO SON -->
+									<ul uib-pagination total-items="numberOfPatient" ng-model="currentPage" items-per-page="pageSize" max-size="maxSize" class="pagination-sm" boundary-links="true" previous-text="Geri" next-text="İleri" first-text="İlk" last-text="Son"></ul>
+									<br />
+									<div class="row">
+										<div class="col-md-3 col-md-push-3"><a href="../#/patregister" class="btn btn-green btn-cons">Danışan Ekle</a></div>
+										<div class="col-md-3 col-md-push-3"><a href="../#/newsession" class="btn btn-green btn-cons">Seans Ekle</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END Danışan Tablosu -->
+					<!-- START modal -->
+					<div id="myModal" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div id="Details" class="modal-content">
+								<!-- SEÇİLİ AVATAR İSMİ BAŞLANGIÇ-->
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<div ng-repeat="x in test.patient | orderBy:sortType:sortReverse | filter:searchPatient | startFrom:((currentPage-1)*pageSize) | limitTo:pageSize  " ng-switch="isSelPatient($index)">
+										<h4 class="{sel:selIdx==$index}" style="font-family:poppinsemibold;" ng-switch-when="true">Danışan: <span style="font-family:nunito;">{{x.username}}</span></h4>
+									</div>
+								</div>
+								<!-- SEÇİLİ AVATAR İSMİ SON-->
+								<!-- SEÇİLİ AVATAR DETAYLARI BAŞLANGIÇ-->
+								<div class="modal-body">
+									<uib-tabset active="testa.active" justified="true">
+										<!-- SEÇİLİ AVATAR BİLGİLERİ BAŞLANGIÇ-->
+										<uib-tab index="0" heading="Danışan Bilgileri">
+											<p></p>
+											<div class="row">
+												<div class="col-sm-6">
+													<div ng-repeat="x in test.patient | orderBy:sortType:sortReverse | filter:searchPatient | startFrom:((currentPage-1)*pageSize) | limitTo:pageSize  " ng-switch="isSelPatient($index)">
+														<p class="{sel:selIdx==$index}" ng-switch-when="true" style="font-size:14px;"><b>Kullanıcı Adı &nbsp;:</b> {{x.username}}</p>
+														<p class="{sel:selIdx==$index}" ng-switch-when="true" style="font-size:14px;"><b>Doğum Tarihi:</b> {{x.birth | date:'d MMMM yyyy'}}</p>
+														<p class="{sel:selIdx==$index}" ng-switch-when="true" style="font-size:14px;"><b>Cinsiyeti&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; :</b> {{x.gender}}</p>
+														<p class="{sel:selIdx==$index}" ng-switch-when="true" style="font-size:14px;"><b>Açıklama&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;:</b> {{x.description}}</p>
+														<input class="hidden {sel:selIdx==$index}" ng-switch-when="true" id="Text1" type="text" runat="server" value={{x.username}} />
+														<input class="hidden {sel:selIdx==$index}" ng-switch-when="true" id="Text2" type="text" runat="server" value={{x.userId}} />
+													</div>
+												</div>
+											</div>
+										</uib-tab>
+										<!-- SEÇİLİ AVATAR BİLGİLERİ SON-->
+										<!-- SEÇİLİ AVATAR SEANSLARI BAŞLANGIÇ-->
+										<uib-tab index="1" heading="Seans Bilgileri" ng-click="patinfo()">
+											<table class="table table-hover" id="basicTable">
+												<!-- TABLO BAŞLIKLAR BAŞLANGIÇ -->
+												<thead>
+													<tr>
+														<th class="text-center" ng-click="sortTypee = 'next_session'; sortReversee = !sortReversee">
+															Seans Tarihi
+															<span ng-show="sortTypee == 'next_session' && !sortReversee" class="fa fa-caret-down"></span>
+															<span ng-show="sortTypee == 'next_session' && sortReversee" class="fa fa-caret-up"></span>
+														</th>
+														<th class="text-center">
+															Seans Durumu
+														</th>
+														<th class="text-center">
+															Detaylar
+														</th>
+													</tr>
+												</thead>
+												<!-- TABLO BAŞLIKLAR SON -->
+												<!-- TABLO SATIRLAR BAŞLANGIÇ -->
+												<tbody ng-repeat="x in testa.patseslist" ng-switch="isSes($index)" ng-click="selses($index)">
+													<tr ng-class="{sel:selIdxx==$index}">
+														<td>{{x.next_session| date:'dd MMM yyyy H:mm'}}</td>
+														<td><a ng-click=""> <img id="someId" src="{{findsrc(x.password)}}" width="24" height="24" /> </a></td>
+														<td><a ng-click="hided()"><img data-toggle="{{finddtog(x.password)}}" data-target="{{finddtrgt(x.password)}}" id="someId" src="{{finddsrc(x.password)}}" width="24" height="24" /></a> &nbsp;&nbsp;&nbsp; <a ng-click="hidee()"><img data-toggle="{{findetog(x.password)}}" data-target="{{findetrgt(x.password)}}" id="someId" src="{{findesrc(x.password)}}" width="24" height="24" /> </a> &nbsp;&nbsp; <a ng-click="hide()"> <img data-toggle="modal" data-target="#eraseModal" id="someId" src="../Images/trash.png" width="24" height="24" /> </a></td>
+													</tr>
+												</tbody>
+												<!-- TABLO SATIRLAR SON -->
+											</table>
+										</uib-tab>
+										<!-- SEÇİLİ AVATAR SEANSLARI SON-->
+									</uib-tabset>
+								</div>
+								<!-- SEÇİLİ AVATAR DETAYLARI SON-->
+								<div class="modal-footer ">
+									<div class="col-12 text-center">
+										<div ng-repeat="x in test.patient | orderBy:sortType:sortReverse | filter:searchPatient | startFrom:((currentPage-1)*pageSize) | limitTo:pageSize  " ng-switch="isSelPatient($index)">
+											<p class="{sel:selIdx==$index}" ng-switch-when="true" style="font-size:14px;"><b>Sıradaki Seans:</b> {{x.next_session | date:'d MMMM yyyy H:mm'}}</p>
+										</div>
+										<button class="btn btn-green " ng-click="startSession()">Seans Seç</button>
+									</div>
+									<!--<div hidden ng-repeat="x in testa.patseslist | orderBy:sortType:sortReverse" ng-switch="isSes($index)">
+											<input class="hidden {sel:selIdxx==$index}" ng-switch-when="true" id="Text6" type="text" runat="server" value={{x.userId}} />
+									</div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END modal -->
+					<!-- START erasemodal -->
+					<div id="eraseModal" class="modal fade modal-dialog-centered blured" role="dialog">
+						<div class="modal-dialog">
+							<div id="Sure" class="modal-content">
+								<!-- SEÇİLİ AVATAR İSMİ BAŞLANGIÇ-->
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 style="font-family:poppinsemibold; text-align:left;">Danışan: <span style="font-family:nunito;">{{testa.infoname}}</span></h4>
+								</div>
+								<!-- SEÇİLİ AVATAR İSMİ SON-->
+								<!-- SEÇİLİ AVATAR SEANS SİLME BAŞLANGIÇ-->
+								<div class="modal-body">
+									<div>
+										<div>
+											<p></p>
+											<div ng-repeat="x in testa.patseslist | orderBy:sortType:sortReverse" ng-switch="isSes($index)">
+												<p style="font-size:14px;" class="{sel:selIdxx==$index}" ng-switch-when="true">{{x.next_session| date:'dd MMMM yyyy H:mm'}} tarihindeki seansı silmek istediğinize emin misiniz?</p>
+												<input class="hidden {sel:selIdxx==$index}" ng-switch-when="true" id="Text4" type="text" runat="server" value={{x.userId}} />
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- SEÇİLİ AVATAR SEANS SİLME SON-->
+								<div class="modal-footer">
+									<div class="col-12 text-center">
+										<button type="button" class="btn btn-green" ng-click="sesdel()">Sil</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END erasemodal -->
+					<!-- START editmodal -->
+					<div id="editModal" class="modal fade blured" role="dialog">
+						<div class="modal-dialog">
+							<div id="Sure" class="modal-content">
+								<!-- SEÇİLİ AVATAR İSMİ BAŞLANGIÇ-->
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="text-left" style="font-family:nunito;"><span style="font-family:poppinsemibold;">Danışan:</span> {{testa.infoname}}</h4>
+								</div>
+								<!-- SEÇİLİ AVATAR İSMİ SON-->
+								<!-- SEÇİLİ AVATAR SEANS DÜZENLEME BAŞLANGIÇ-->
+								<form name="form" ng-submit="sessionedit(sessioneditform)" novalidate>
+									<div class="modal-body">
+										<div>
+											<div>
+												<p></p>
+												<div ng-repeat="x in testa.patseslist | orderBy:sortType:sortReverse" ng-switch="isSes($index)">
+													<!-- SEANS TARİHİ-->
+													<p style="font-size:14px;" class="{sel:selIdxx==$index}" ng-switch-when="true">Danışanın {{x.next_session| date:'dd MMMM yyyy H:mm'}} tarihindeki seansının tarihini değiştirmek istediğinizden emin misiniz?</p>
+													<!-- SEANS ID'si-->
+													<input class="hidden {sel:selIdxx==$index}" ng-switch-when="true" id="Text5" type="text" runat="server" value={{x.userId}} />
+													<input class="hidden {sel:selIdxx==$index}" ng-switch-when="true" id="Text7" type="text" runat="server" value="{{x.next_session| date:'dd MMMM yyyy H:mm'}}" />
+													<!-- SEANS ID'si-->
+													<div class="form-group row {sel:selIdxx==$index}" ng-switch-when="true">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<div class="col-12 text-center">
+											<button type="button" class="btn btn-green" ng-click="goedit()">Değiştir</button>
+										</div>
+									</div>
+								</form>
+								<!-- SEÇİLİ AVATAR SEANS DÜZENLEME SON-->
+							</div>
+						</div>
+					</div>
+					<!-- END editmodal -->
+					<!-- START detailsmodal -->
+					<div id="detailModal" class="modal fade blured" role="dialog">
+						<div class="modal-dialog">
+							<div id="Sure" class="modal-content">
+								<!-- SEÇİLİ AVATAR İSMİ BAŞLANGIÇ-->
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="text-left nunito"><span style="font-family:poppinsemibold;">Danışan:</span> {{testa.infoname}}</h4>
+								</div>
+								<!-- SEÇİLİ AVATAR İSMİ SON-->
+								<!-- SEÇİLİ AVATAR SEANS DETAYLARI BAŞLANGIÇ-->
+								<div class="modal-body">
+									<div>
+										<!-- BİLGİLER BAŞLANGIÇ-->
+										<p></p>
+										<div ng-repeat="x in testa.patseslist | orderBy:sortType:sortReverse" ng-switch="isSes($index)">
+											<p style="font-size:14px;" class="{sel:selIdxx==$index}" ng-switch-when="true">Danışanın {{x.next_session| date:'dd MMMM yyyy H:mm'}} tarihindeki seans detaylarını görmek istediğinizden emin misiniz?</p>
+											<input class="hidden {sel:selIdxx==$index}" ng-switch-when="true" id="Text6" type="text" runat="server" value={{x.userId}} />
+										</div>
+										<!-- BİLGİLER SON-->
+									</div>
+								</div>
+								<!-- SEÇİLİ AVATAR SEANS DETAYLARI SON-->
+								<div class="modal-footer">
+									<div class="col-12 text-center">
+										<button type="button" class="btn btn-green" ng-click="godetails()">Detaylar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END detailsmodal -->
+					<!-- START exitmodal -->
+					<div id="exitModal" class="modal fade blured" role="dialog">
+						<div class="modal-dialog">
+							<div id="Sure" class="modal-content">
+								<!-- SEÇİLİ AVATAR İSMİ BAŞLANGIÇ-->
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="text-left nunito"><span style="font-family:poppinsemibold;">Çıkış</span></h4>
+								</div>
+								<!-- SEÇİLİ AVATAR İSMİ SON-->
+								<!-- SEÇİLİ AVATAR SEANS DETAYLARI BAŞLANGIÇ-->
+								<div class="modal-body">
+									<div>
+										<!-- BİLGİLER BAŞLANGIÇ-->
+										<p></p>
+										<p style="font-size:14px;">Çıkış yapmak istediğinizden emin misiniz?</p>
+										<!-- BİLGİLER SON-->
+									</div>
+								</div>
+								<!-- SEÇİLİ AVATAR SEANS DETAYLARI SON-->
+								<div class="modal-footer">
+									<div class="col-12 text-center">
+										<button type="button" class="btn btn-green" ng-click="userLogout()">Çıkış Yap</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END exitmodal -->
+					<!-- END PLACE PAGE CONTENT HERE -->
+				</div>
+				<!-- END CONTAINER FLUID -->
+			</div>
+			<!-- END PAGE CONTENT -->
+			<!-- START COPYRIGHT -->
+			<div class=" container-fluid  container-fixed-lg footer">
+				<div class="copyright sm-text-center">
+					<p class="small no-margin pull-left sm-pull-reset nunito">
+						<span class="hint-text nunito">Copyright &copy; 2018 </span>
+						<span class="nunito">METAVERSE</span>.
+						<span class="hint-text nunito">All rights reserved. </span>
+						<span class="sm-block"><a href="" data-toggle="modal" data-target="#PrivacyModal" class="m-l-10 m-r-10 nunito">Terms of use & Privacy Policy</a></span>
+					</p>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!-- END COPYRIGHT -->
+		</div>
+		<!-- END PAGE CONTENT WRAPPER -->
+	</div>
+	<!-- END PAGE CONTAINER -->
+	<div ng-init="init()"></div>
+	<!-- PRIVACY MODAL BAŞLANGIÇ-->
+	<div id="PrivacyModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div id="Sure" class="modal-content">
+				<!-- BAŞLIK BAŞLANGIÇ-->
+				<div class="modal-header text-left">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="forgothead">Kullanım Şartları ve Gizlilik Politikası</h4>
+					<hr style="margin-top:18px; margin-bottom:25px;" />
+				</div>
+				<!-- BAŞLIK SON-->
+				<!-- İÇERİK BAŞLANGIÇ-->
+				<div>
+					<div class="modal-body">
+						<div class="scrollable">
+							<p style="height:250px;" >
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in sollicitudin est, in gravida lectus. Sed neque arcu, pharetra a felis eget, efficitur feugiat odio. Integer et vestibulum leo. Nullam posuere fringilla felis sit amet cursus. Proin aliquet leo rhoncus nulla faucibus dapibus. Suspendisse potenti. Suspendisse potenti.
+
+								Aenean malesuada sollicitudin quam eu mattis. Nam ornare metus eget felis faucibus, nec egestas turpis tempor. Integer sit amet est vel justo varius venenatis et non mi. Aliquam pretium mauris a lectus maximus molestie. Nullam quis pretium nunc, eu lobortis ante. Donec sed justo ultrices, scelerisque ipsum sit amet, malesuada eros. Nulla in tristique felis. Nulla dignissim, metus sit amet porta dapibus, dolor nisi pharetra mauris, sit amet congue libero nisi id turpis. Quisque sit amet velit feugiat, dapibus quam et, pulvinar nulla. Aenean sit amet ultrices elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eu quam magna. Nulla sit amet gravida quam. Curabitur at risus lobortis, pretium diam ut, iaculis dui. In auctor nibh fermentum, congue tellus sed, mollis nulla.
+
+								Donec sit amet finibus massa, et finibus nunc. Etiam suscipit massa leo, nec mattis massa ultricies sed. Vivamus felis nunc, sollicitudin eget ultrices ac, ultrices id lorem. Aliquam a velit tristique, ultrices erat eu, porta erat. Mauris at lacus vel tortor auctor tincidunt. Etiam elementum lectus id lacinia tristique. Praesent fringilla est vel blandit viverra. Proin mi justo, convallis id dignissim at, gravida eget augue. Vivamus at imperdiet eros. Etiam eu nisl accumsan, gravida leo vel, scelerisque turpis.
+
+								Nam consectetur risus ac est varius hendrerit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce et metus orci. Etiam bibendum luctus ligula id tincidunt. Proin sed diam mollis, porta est commodo, cursus tellus. Maecenas tempus consequat risus eget mollis. Morbi sit amet mollis leo. Maecenas varius purus enim, eget ultrices dui dictum et. Nam sit amet velit eleifend, posuere lectus sit amet, pharetra lorem. Pellentesque non purus auctor, porttitor elit eget, viverra magna. Donec massa lacus, rutrum sed semper ut, lacinia non eros. Donec semper massa at eros auctor pharetra. Pellentesque vitae tristique velit, vitae facilisis augue.
+
+								Cras vel ipsum sed mauris suscipit vulputate. Mauris vitae mattis turpis. Fusce ultrices, velit ac tincidunt commodo, lectus mauris placerat lacus, non iaculis nibh nibh nec dui. Quisque a eleifend purus, id vulputate eros. Vestibulum id est eget sapien pellentesque commodo a ut magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus auctor nibh quis nulla tincidunt, non ullamcorper lacus blandit. Duis turpis enim, mollis id lectus tristique, commodo porttitor velit. Vivamus eget ex porta, vehicula ipsum nec, porta enim. Sed eu velit id tortor bibendum hendrerit. Aenean efficitur risus a lacinia finibus. Phasellus molestie ex non eros euismod, et ultrices mi tempor. Suspendisse potenti. Quisque bibendum, nulla eleifend laoreet ultrices, ipsum sem interdum ex, a tristique nulla est at elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam orci velit, euismod ut aliquet a, condimentum eget eros.
+							</p>
+						</div>
+					</div>
+					<div class="modal-footer text-center">
+						<button type="submit" class="btn-green" data-dismiss="modal" id="send">Kapat</button>
+					</div>
+				</div>
+				<!-- İÇERİK İÇİN FORM SON-->
+			</div>
+		</div>
+	</div>
+	<!-- PRIVACY MODAL SON-->
+	<!-- END PAGE LEVEL JS -->
+</body>

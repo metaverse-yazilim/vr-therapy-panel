@@ -1,0 +1,11 @@
+﻿html,
+body {
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #212121;
+    height: 100%;
+}

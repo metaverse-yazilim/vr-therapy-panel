@@ -1,0 +1,169 @@
+﻿<body class="fixed-header ">
+	<link href="../Styles/patloggedin.css" rel="stylesheet" type="text/css" />
+	<div ng-init="initer()"></div>
+	<!-- BEGIN SIDEBPANEL-->
+	<!-- END SIDEBAR -->
+	<!-- END SIDEBPANEL-->
+	<!-- START PAGE-CONTAINER -->
+	<div class="page-container " style="height:92vh">
+		<!-- START HEADER -->
+		<div class="header ">
+			<div class="">
+				<div class="brand inline ">
+					<img src="../Images/vr-social-logo-oneline.png" width="158" height="25">
+				</div>
+				<!-- START NOTIFICATION LIST -->
+				<!-- END NOTIFICATIONS LIST -->
+			</div>
+			<div class="d-flex align-items-center">
+				<!-- START User Info-->
+				<div class="pull-left p-r-10 fs-16 font-heading hidden-md-down">
+					<span class="nunito bold">{{testa.username}}</span>
+				</div>
+			</div>
+		</div>
+		<!-- END HEADER -->
+		<!-- START PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrapper">
+			<!-- START PAGE CONTENT -->
+			<div class="content ">
+				<!-- START JUMBOTRON -->
+				<div class="jumbotron" data-pages="parallax">
+					<div class=" container-fluid   container-fixed-lg sm-p-l-0 sm-p-r-0">
+					</div>
+				</div>
+				<!-- END JUMBOTRON -->
+				<!-- START CONTAINER FLUID -->
+				<div class=" container-fluid   container-fixed-lg">
+					<!-- BEGIN PlACE PAGE CONTENT HERE -->
+					<!-- START Danışan tablosu -->
+					<div id="Faketable"><h4 style="font-family:poppinsemibold;">Seans Listesi</h4></div>
+					<div id="Table" class="center-table">
+						<div class="text-center">
+							<div style="min-height:100%; min-width:100%">
+								<div>
+									<!-- TABLO BAŞLANGIÇ -->
+									<table class="table table-hover" id="basicTable">
+										<!-- TABLO BAŞLIKLAR BAŞLANGIÇ -->
+										<thead>
+											<tr>
+												<th class="" ng-click="sortTypee = 'next_session'; sortReversee = !sortReversee">
+													Seans Tarihi
+													<span ng-show="sortTypee == 'next_session' && !sortReversee" class="fa fa-caret-down"></span>
+													<span ng-show="sortTypee == 'next_session' && sortReversee" class="fa fa-caret-up"></span>
+												</th>
+												<th class="">
+													Seans Durumu
+												</th>
+												<th class="">
+													Detaylar
+												</th>
+											</tr>
+										</thead>
+										<!-- TABLO BAŞLIKLAR SON -->
+										<!-- TABLO SATIRLAR BAŞLANGIÇ -->
+										<tbody ng-repeat="x in testa.patseslist | orderBy:sortTypee:sortReversee" ng-switch="isSes($index)" ng-click="selses($index)">
+											<tr ng-class="{sel:selIdxx==$index}">
+												<td>{{x.next_session| date:'dd MMM yy H:mm'}}</td>
+												<td><a ng-click=""> <img id="someId" src="{{findsrc(x.password)}}" width="24" height="24" /> </a></td>
+												<td><a ng-click=""><img data-toggle="{{finddtog(x.password)}}" data-target="{{finddtrgt(x.password)}}" id="someId" src="{{finddsrc(x.password)}}" width="24" height="24" /></a><!--<a ng-click=""><img data-toggle="{{findetog(x.password)}}" data-target="{{findetrgt(x.password)}}" id="someId" src="{{findesrc(x.password)}}" width="24" height="24" /> </a> &nbsp;&nbsp; <a ng-click=""> <img data-toggle="modal" data-target="#eraseModal" id="someId" src="../Images/trash.png" width="24" height="24" /> </a>--></td>
+											</tr>
+										</tbody>
+										<!-- TABLO SATIRLAR SON -->
+									</table>
+									<br />
+									<div class="row">
+										<div class="col-12 text-center m-t-30"><button class="btn btn-green btn-cons" ng-click="userLogout()">Çıkış Yap</button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- END Danışan Tablosu -->
+					<!-- START detailsmodal -->
+					<div id="detailModal" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div id="Sure" class="modal-content">
+								<!--SEÇİLİ AVATAR İSMİ BAŞLANGIÇ-->
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<div ng-repeat="x in testa.patseslist | orderBy:sortType:sortReverse" ng-switch="isSes($index)">
+										<h4 class="{sel:selIdxx==$index}" ng-switch-when="true" style="font-family:poppinsemibold;"> {{x.next_session| date:'dd MMMM yy H:mm'}}</h4>
+										<input class="hidden {sel:selIdxx==$index}" ng-switch-when="true" id="Text6" type="text" runat="server" value={{x.userId}} />
+									</div>
+								</div>
+								<!--SEÇİLİ AVATAR İSMİ SON-->
+								<!--SEÇİLİ AVATAR SEANS DETAYLARI BAŞLANGIÇ-->
+								<div class="modal-body">
+									<div>
+										<!--BİLGİLER BAŞLANGIÇ-->
+										<p></p>
+										<p class="nunito">Tarihli seans detaylarını görmek istediğinizden emin misiniz?</p>
+										<!--BİLGİLER SON-->
+									</div>
+								</div>
+								<!--SEÇİLİ AVATAR SEANS DETAYLARI SON-->
+								<div class="modal-footer">
+									<div class="col-12 text-center">
+										<button type="button" class="btn btn-green" ng-click="godetails()">Detaylar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END detailsmodal -->
+					<!-- END PLACE PAGE CONTENT HERE -->
+				</div>
+				<!-- END CONTAINER FLUID -->
+			</div>
+			<!-- END PAGE CONTENT -->
+			<!-- START COPYRIGHT -->
+			<div class=" container-fluid  container-fixed-lg footer">
+				<div class="copyright sm-text-center">
+					<p class="small no-margin pull-left sm-pull-reset nunito">
+						<span class="hint-text nunito">Copyright &copy; 2018 </span>
+						<span class="nunito">METAVERSE</span>.
+						<span class="hint-text nunito">All rights reserved. </span>
+						<span class="sm-block"><a href="" class="m-l-10 m-r-10 nunito">Terms of use</a> <span class="muted">|</span> <a href="" class="m-l-10 nunito">Privacy Policy</a></span>
+					</p>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!-- END COPYRIGHT -->
+		</div>
+		<!-- END PAGE CONTENT WRAPPER -->
+	</div>
+	<!-- END PAGE CONTAINER -->
+	<div ng-init="init()"></div>
+	<!-- END PAGE LEVEL JS -->
+</body>
+
+
+
+
+
+<!--<div style="background-color:#ccc">
+	<div class="text-center">
+		<div style="min-height:100%; min-width:100%">
+			<div ng-init="init()"></div>
+			<div class="col-sm-4">
+				<form name="form" ng-submit="userLogout()">
+					<label>Welcome</label>
+					<p>
+						<div ng-controller="loggedin_controller" id="someId">Id:  {{test.userId}}</div>
+					</p>
+					<p>
+						<div ng-controller="loggedin_controller" id="someId">Name:  {{test.name}}</div>
+					</p>
+					<p>
+						<div ng-controller="loggedin_controller" id="someId">Surname:  {{test.surname}}</div>
+					</p>
+					<div class="form-group">
+						<button class="btn btn-lg btn-info btn-block" type="submit">Log Out</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>-->

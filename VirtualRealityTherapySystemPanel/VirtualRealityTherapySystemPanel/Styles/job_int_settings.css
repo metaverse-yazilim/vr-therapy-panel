@@ -1,0 +1,254 @@
+﻿.nunito {
+    font-family: nunito;
+}
+.table td {
+    font-family: nunito;
+}
+
+.btn-green {
+    background-color: #27b8f7;
+    color: white;
+    border-radius: 2px;
+    font-family: buttonfont;
+}
+
+    .btn-green:hover {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:visited {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:focus {
+        background-color: #27b8f7;
+        color: white;
+    }
+
+    .btn-green:active {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+.btn:focus, .btn:focus:active, .btn.active:focus {
+    color: white;
+}
+
+#myButton1 {
+    position: absolute;
+    top: 50px;
+    left: 257px;
+    width: 30px;
+    height: 25px;
+}
+
+#myButton2 {
+    position: absolute;
+    top: 188px;
+    left: 172px;
+    width: 30px;
+    height: 25px;
+}
+
+#myButton3 {
+    position: absolute;
+    top: 188px;
+    left: 366px;
+    width: 30px;
+    height: 25px;
+}
+
+.square {
+    width:34px;
+    height:34px;
+    padding:1px;
+}
+
+.btn-gray {
+    background-color: lightgray;
+}
+
+#jumbo {
+    text-align: center;
+    font-family: nunito;
+    font-weight: 400;
+    font-size: 1.25vw;
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
+
+#blockseven{
+    padding-right: 0px;
+    width:130px;
+}
+#blockfive {
+    padding-right: 0px;
+    width: 130px;
+}
+#blocktwo {
+    padding-bottom: 10px;
+}
+
+#blockfour {
+    padding-bottom: 10px;
+}
+
+@media screen and (min-width:1601.23px) and (max-width:1614.7px) {
+    #blocktwo {
+        padding-bottom: 5px;
+    }
+    #blockfour {
+        padding-bottom: 5px;
+    }
+    #blocksix {
+        padding-bottom: 5px;
+    }
+    #blockeight {
+        padding-bottom: 15px;
+    }
+}
+
+@media screen and (min-width:1553.77px) and (max-width:1601.23px) {
+    #blockfive {
+        padding-bottom: 6px;
+        padding-top: 18px;
+    }
+    #blockseven {
+        padding-bottom: 6px;
+        padding-top: 18px;
+    }
+    #blockthree {
+        padding-top: 18px;
+    }
+    #blockone {
+        padding-top: 18px;
+    }
+
+    #blocktwo {
+        padding-bottom: 4px;
+        padding-top: 18px;
+    }
+
+    #blockfour {
+        padding-bottom: 4px;
+        padding-top: 18px;
+    }
+
+    #blocksix {
+        padding-bottom: 6px;
+        padding-top: 18px;
+    }
+
+    #blockeight {
+        padding-bottom: 5px;
+        padding-top: 18px;
+    }
+}
+
+@media screen and (min-width:1400.75px) and (max-width:1553.76px) {
+    #blockfive {
+        padding-bottom: 6px;
+        padding-top: 18px;
+    }
+
+    #blockseven {
+        padding-bottom: 6px;
+        padding-top: 7px;
+    }
+
+    #blockthree {
+        padding-top: 18px;
+    }
+
+    #blockone {
+        padding-top: 18px;
+    }
+
+    #blocktwo {
+        padding-bottom: 4px;
+        padding-top: 18px;
+    }
+
+    #blockfour {
+        padding-bottom: 4px;
+        padding-top: 18px;
+    }
+
+    #blocksix {
+        padding-bottom: 6px;
+        padding-top: 18px;
+    }
+
+    #blockeight {
+        padding-bottom: 5px;
+        padding-top: 7px;
+    }
+    #block8inside{
+        margin-bottom: 0px;
+    }
+}
+
+#gobutton {
+    position: absolute;
+    top: 416px;
+    right: 31px;
+}
+#backbutton {
+    position: absolute;
+    top: 416px;
+    left: 7px;
+}
+
+@media screen and (max-width:1400.74px) {
+    #blockfive {
+        padding-bottom: 6px;
+        padding-top: 18px;
+    }
+
+    #blockseven {
+        padding-bottom: 6px;
+        padding-top: 15px;
+    }
+
+    #blockthree {
+        padding-top: 18px;
+    }
+
+    #blockone {
+        padding-top: 18px;
+    }
+
+    #blocktwo {
+        padding-bottom: 4px;
+        padding-top: 18px;
+    }
+
+    #blockfour {
+        padding-bottom: 4px;
+        padding-top: 18px;
+    }
+
+    #blocksix {
+        padding-bottom: 6px;
+        padding-top: 18px;
+    }
+
+    #blockeight {
+        padding-bottom: 5px;
+        padding-top: 15px;
+    }
+
+    #block8inside {
+        margin-bottom: 5px;
+    }
+
+}
+
+
+#send {
+    width: 150px;
+    height: 50px;
+    border: none;
+}

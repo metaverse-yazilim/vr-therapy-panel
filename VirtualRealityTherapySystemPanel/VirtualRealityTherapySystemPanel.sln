@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualRealityTherapySystemPanel", "VirtualRealityTherapySystemPanel\VirtualRealityTherapySystemPanel.csproj", "{B8E171A3-9A71-4C1A-B9C8-49274F6CBCFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualTherapySystemPanelDB", "VirtualTherapySystemPanelDB\VirtualTherapySystemPanelDB.csproj", "{B8D2F66B-00DF-4C1A-962E-275594C04CAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8E171A3-9A71-4C1A-B9C8-49274F6CBCFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E171A3-9A71-4C1A-B9C8-49274F6CBCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E171A3-9A71-4C1A-B9C8-49274F6CBCFC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B8E171A3-9A71-4C1A-B9C8-49274F6CBCFC}.Debug|x86.Build.0 = Debug|Any CPU
+		{B8E171A3-9A71-4C1A-B9C8-49274F6CBCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E171A3-9A71-4C1A-B9C8-49274F6CBCFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8E171A3-9A71-4C1A-B9C8-49274F6CBCFC}.Release|x86.ActiveCfg = Release|Any CPU
+		{B8E171A3-9A71-4C1A-B9C8-49274F6CBCFC}.Release|x86.Build.0 = Release|Any CPU
+		{B8D2F66B-00DF-4C1A-962E-275594C04CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D2F66B-00DF-4C1A-962E-275594C04CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D2F66B-00DF-4C1A-962E-275594C04CAE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B8D2F66B-00DF-4C1A-962E-275594C04CAE}.Debug|x86.Build.0 = Debug|Any CPU
+		{B8D2F66B-00DF-4C1A-962E-275594C04CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D2F66B-00DF-4C1A-962E-275594C04CAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D2F66B-00DF-4C1A-962E-275594C04CAE}.Release|x86.ActiveCfg = Release|Any CPU
+		{B8D2F66B-00DF-4C1A-962E-275594C04CAE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D173AC88-FF26-416E-BBD0-27CA85BDDD0F}
+	EndGlobalSection
+EndGlobal

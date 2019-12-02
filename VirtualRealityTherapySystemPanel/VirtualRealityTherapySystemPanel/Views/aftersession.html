@@ -1,0 +1,429 @@
+﻿<body class="fixed-header ">
+    <link media="screen" type="text/css" rel="stylesheet" href="../Plugins/Assets/rickshaw/rickshaw.min.css">
+    <link media="screen" type="text/css" rel="stylesheet" href="../Plugins/Assets/rickshaw/src/css/graph.css">
+    <link href="../Styles/aftersession.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Plugins/Assets/d3/d3.js"></script>
+    <script type="text/javascript" src="../Plugins/Assets/rickshaw/vendor/d3.layout.min.js"></script>
+    <script type="text/javascript" src="../Plugins/Assets/rickshaw/rickshaw.min.js"></script>
+    <!-- START PAGE-CONTAINER -->
+    <div class="page-container" id="container">
+        <!-- START HEADER -->
+        <div class="header ">
+            <div class="">
+                <div class="brand inline ">
+                    <img src="../Images/vr-social-logo-oneline.png" width="158" height="25">
+                </div>
+                <!-- START NOTIFICATION LIST -->
+                <!-- END NOTIFICATIONS LIST -->
+            </div>
+        </div>
+        <!-- END HEADER -->
+        <!-- START PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrapper ">
+            <!-- START PAGE CONTENT -->
+            <div class="content" id="pagetop">
+                <!-- START CONTAINER FLUID -->
+                <div class=" container-fluid container-fixed-lg">
+                    <div class="row">
+                        <div class="col-lg-3"><p class="m-b-0 m-t-45 nunito" style="font-size:15px;"><b>Danışan:</b> {{initial.patname}}</p></div>
+                        <div class="col-lg-6"><h3 class="text-center" id="baslik">Senaryo Özeti</h3> </div>
+                    </div>
+                    <div class="row">
+                        <!-- 1.SÜTUN (SEANS SEKMELERİ & DEĞERLENDİRMELER) BAŞLANGIÇ-->
+                        <div class="col-lg-5">
+                            <div class="card card-default">
+                                <div class="card-block" id="sekmeler">
+                                    <!-- SEANS SEKMELERİ BAŞLANGIÇ -->
+                                    <div class="no-overflow">
+                                        <uib-tabset active="active.zero" justified="true">
+                                            <uib-tab index="0" heading="Seans 1" id="blueish" ng-hide="doner.ses_list[0]" ng-click="getexpo10()">
+                                                <uib-tabset active="active.one" justified="true">
+                                                    <uib-tab index="0" heading="Exp 1" ng-hide="doner.list[0][0]" ng-click="getexpo11()"> </uib-tab>
+                                                    <uib-tab index="1" heading="Exp 2" ng-hide="doner.list[0][1]" ng-click="getexpo12()"> </uib-tab>
+                                                    <uib-tab index="2" heading="Exp 3" ng-hide="doner.list[0][2]" ng-click="getexpo13()"> </uib-tab>
+                                                    <uib-tab index="3" heading="Exp 4" ng-hide="doner.list[0][3]" ng-click="getexpo14()"> </uib-tab>
+                                                    <uib-tab index="4" heading="Exp 5" ng-hide="doner.list[0][4]" ng-click="getexpo15()"> </uib-tab>
+                                                    <uib-tab index="5" heading="Exp 6" ng-hide="doner.list[0][5]" ng-click="getexpo16()"> </uib-tab>
+                                                    <uib-tab index="6" heading="Exp 7" ng-hide="doner.list[0][6]" ng-click="getexpo17()"> </uib-tab>
+                                                    <uib-tab index="7" heading="Exp 8" ng-hide="doner.list[0][7]" ng-click="getexpo18()"> </uib-tab>
+                                                </uib-tabset>
+                                            </uib-tab>
+                                            <uib-tab index="1" heading="Seans 2" id="blueish" ng-hide="doner.ses_list[1]" ng-click="getexpo20()">
+                                                <uib-tabset active="active.two" justified="true">
+                                                    <uib-tab index="0" heading="Exp 1" ng-hide="doner.list[1][0]" ng-click="getexpo21()"> </uib-tab>
+                                                    <uib-tab index="1" heading="Exp 2" ng-hide="doner.list[1][1]" ng-click="getexpo22()"> </uib-tab>
+                                                    <uib-tab index="2" heading="Exp 3" ng-hide="doner.list[1][2]" ng-click="getexpo23()"> </uib-tab>
+                                                    <uib-tab index="3" heading="Exp 4" ng-hide="doner.list[1][3]" ng-click="getexpo24()"> </uib-tab>
+                                                    <uib-tab index="4" heading="Exp 5" ng-hide="doner.list[1][4]" ng-click="getexpo25()"> </uib-tab>
+                                                    <uib-tab index="5" heading="Exp 6" ng-hide="doner.list[1][5]" ng-click="getexpo26()"> </uib-tab>
+                                                    <uib-tab index="6" heading="Exp 7" ng-hide="doner.list[1][6]" ng-click="getexpo27()"> </uib-tab>
+                                                    <uib-tab index="7" heading="Exp 8" ng-hide="doner.list[1][7]" ng-click="getexpo28()"> </uib-tab>
+                                                </uib-tabset>
+                                            </uib-tab>
+                                            <uib-tab index="2" heading="Seans 3" id="blueish" ng-hide="doner.ses_list[2]" ng-click="getexpo30()">
+                                                <uib-tabset active="active.three" justified="true">
+                                                    <uib-tab index="0" heading="Exp 1" ng-hide="doner.list[2][0]" ng-click="getexpo31()"> </uib-tab>
+                                                    <uib-tab index="1" heading="Exp 2" ng-hide="doner.list[2][1]" ng-click="getexpo32()"> </uib-tab>
+                                                    <uib-tab index="2" heading="Exp 3" ng-hide="doner.list[2][2]" ng-click="getexpo33()"> </uib-tab>
+                                                    <uib-tab index="3" heading="Exp 4" ng-hide="doner.list[2][3]" ng-click="getexpo34()"> </uib-tab>
+                                                    <uib-tab index="4" heading="Exp 5" ng-hide="doner.list[2][4]" ng-click="getexpo35()"> </uib-tab>
+                                                    <uib-tab index="5" heading="Exp 6" ng-hide="doner.list[2][5]" ng-click="getexpo36()"> </uib-tab>
+                                                    <uib-tab index="6" heading="Exp 7" ng-hide="doner.list[2][6]" ng-click="getexpo37()"> </uib-tab>
+                                                    <uib-tab index="7" heading="Exp 8" ng-hide="doner.list[2][7]" ng-click="getexpo38()"> </uib-tab>
+                                                </uib-tabset>
+                                            </uib-tab>
+                                            <uib-tab index="3" heading="Seans 4" id="blueish" ng-hide="doner.ses_list[3]" ng-click="getexpo40()">
+                                                <uib-tabset active="active.four" justified="true">
+                                                    <uib-tab index="0" heading="Exp 1" ng-hide="doner.list[3][0]" ng-click="getexpo41()"> </uib-tab>
+                                                    <uib-tab index="1" heading="Exp 2" ng-hide="doner.list[3][1]" ng-click="getexpo42()"> </uib-tab>
+                                                    <uib-tab index="2" heading="Exp 3" ng-hide="doner.list[3][2]" ng-click="getexpo43()"> </uib-tab>
+                                                    <uib-tab index="3" heading="Exp 4" ng-hide="doner.list[3][3]" ng-click="getexpo44()"> </uib-tab>
+                                                    <uib-tab index="4" heading="Exp 5" ng-hide="doner.list[3][4]" ng-click="getexpo45()"> </uib-tab>
+                                                    <uib-tab index="5" heading="Exp 6" ng-hide="doner.list[3][5]" ng-click="getexpo46()"> </uib-tab>
+                                                    <uib-tab index="6" heading="Exp 7" ng-hide="doner.list[3][6]" ng-click="getexpo47()"> </uib-tab>
+                                                    <uib-tab index="7" heading="Exp 8" ng-hide="doner.list[3][7]" ng-click="getexpo48()"> </uib-tab>
+                                                </uib-tabset>
+                                            </uib-tab>
+                                            <uib-tab index="4" heading="Seans 5" id="blueish" ng-hide="doner.ses_list[4]" ng-click="getexpo50()">
+                                                <uib-tabset active="active.five" justified="true">
+                                                    <uib-tab index="0" heading="Exp 1" ng-hide="doner.list[4][0]" ng-click="getexpo51()"> </uib-tab>
+                                                    <uib-tab index="1" heading="Exp 2" ng-hide="doner.list[4][1]" ng-click="getexpo52()"> </uib-tab>
+                                                    <uib-tab index="2" heading="Exp 3" ng-hide="doner.list[4][2]" ng-click="getexpo53()"> </uib-tab>
+                                                    <uib-tab index="3" heading="Exp 4" ng-hide="doner.list[4][3]" ng-click="getexpo54()"> </uib-tab>
+                                                    <uib-tab index="4" heading="Exp 5" ng-hide="doner.list[4][4]" ng-click="getexpo55()"> </uib-tab>
+                                                    <uib-tab index="5" heading="Exp 6" ng-hide="doner.list[4][5]" ng-click="getexpo56()"> </uib-tab>
+                                                    <uib-tab index="6" heading="Exp 7" ng-hide="doner.list[4][6]" ng-click="getexpo57()"> </uib-tab>
+                                                    <uib-tab index="7" heading="Exp 8" ng-hide="doner.list[4][7]" ng-click="getexpo58()"> </uib-tab>
+                                                </uib-tabset>
+                                            </uib-tab>
+                                            <uib-tab index="5" heading="Seans 6" id="blueish" ng-hide="doner.ses_list[5]" ng-click="getexpo60()">
+                                                <uib-tabset active="active.six" justified="true">
+                                                    <uib-tab index="0" heading="Exp 1" ng-hide="doner.list[5][0]" ng-click="getexpo61()"> </uib-tab>
+                                                    <uib-tab index="1" heading="Exp 2" ng-hide="doner.list[5][1]" ng-click="getexpo62()"> </uib-tab>
+                                                    <uib-tab index="2" heading="Exp 3" ng-hide="doner.list[5][2]" ng-click="getexpo63()"> </uib-tab>
+                                                    <uib-tab index="3" heading="Exp 4" ng-hide="doner.list[5][3]" ng-click="getexpo64()"> </uib-tab>
+                                                    <uib-tab index="4" heading="Exp 5" ng-hide="doner.list[5][4]" ng-click="getexpo65()"> </uib-tab>
+                                                    <uib-tab index="5" heading="Exp 6" ng-hide="doner.list[5][5]" ng-click="getexpo66()"> </uib-tab>
+                                                    <uib-tab index="6" heading="Exp 7" ng-hide="doner.list[5][6]" ng-click="getexpo67()"> </uib-tab>
+                                                    <uib-tab index="7" heading="Exp 8" ng-hide="doner.list[5][7]" ng-click="getexpo68()"> </uib-tab>
+                                                </uib-tabset>
+                                            </uib-tab>
+                                            <uib-tab index="6" heading="Seans 7" id="blueish" ng-hide="doner.ses_list[6]" ng-click="getexpo70()">
+                                                <uib-tabset active="active.seven" justified="true">
+                                                    <uib-tab index="0" heading="Exp 1" ng-hide="doner.list[6][0]" ng-click="getexpo71()"> </uib-tab>
+                                                    <uib-tab index="1" heading="Exp 2" ng-hide="doner.list[6][1]" ng-click="getexpo72()"> </uib-tab>
+                                                    <uib-tab index="2" heading="Exp 3" ng-hide="doner.list[6][2]" ng-click="getexpo73()"> </uib-tab>
+                                                    <uib-tab index="3" heading="Exp 4" ng-hide="doner.list[6][3]" ng-click="getexpo74()"> </uib-tab>
+                                                    <uib-tab index="4" heading="Exp 5" ng-hide="doner.list[6][4]" ng-click="getexpo75()"> </uib-tab>
+                                                    <uib-tab index="5" heading="Exp 6" ng-hide="doner.list[6][5]" ng-click="getexpo76()"> </uib-tab>
+                                                    <uib-tab index="6" heading="Exp 7" ng-hide="doner.list[6][6]" ng-click="getexpo77()"> </uib-tab>
+                                                    <uib-tab index="7" heading="Exp 8" ng-hide="doner.list[6][7]" ng-click="getexpo78()"> </uib-tab>
+                                                </uib-tabset>
+                                            </uib-tab>
+                                            <uib-tab index="7" heading="Seans 8" id="blueish" ng-hide="doner.ses_list[7]" ng-click="getexpo80()">
+                                                <uib-tabset active="active.eight" justified="true">
+                                                    <uib-tab index="0" heading="Exp 1" ng-hide="doner.list[7][0]" ng-click="getexpo81()"> </uib-tab>
+                                                    <uib-tab index="1" heading="Exp 2" ng-hide="doner.list[7][1]" ng-click="getexpo82()"> </uib-tab>
+                                                    <uib-tab index="2" heading="Exp 3" ng-hide="doner.list[7][2]" ng-click="getexpo83()"> </uib-tab>
+                                                    <uib-tab index="3" heading="Exp 4" ng-hide="doner.list[7][3]" ng-click="getexpo84()"> </uib-tab>
+                                                    <uib-tab index="4" heading="Exp 5" ng-hide="doner.list[7][4]" ng-click="getexpo85()"> </uib-tab>
+                                                    <uib-tab index="5" heading="Exp 6" ng-hide="doner.list[7][5]" ng-click="getexpo86()"> </uib-tab>
+                                                    <uib-tab index="6" heading="Exp 7" ng-hide="doner.list[7][6]" ng-click="getexpo87()"> </uib-tab>
+                                                    <uib-tab index="7" heading="Exp 8" ng-hide="doner.list[7][7]" ng-click="getexpo88()"> </uib-tab>
+                                                </uib-tabset>
+                                            </uib-tab>
+                                        </uib-tabset>
+                                    </div>
+                                    <!-- SEANS SEKMELERİ SON -->
+                                    <!-- DEĞERLENDİRME & YORUMLAR (KAYITSIZ) BAŞLANGIÇ -->
+                                    <div ng-class="{'hidden':doner.done == 1}">
+                                        <form name="form" ng-submit="saveexpo(settings)">
+                                            <div id="others">
+                                                <!-- NERVOUSNESS BAŞLANGIÇ -->
+                                                <div class="form-group" id="gergin">
+                                                    <p class="nunito">
+                                                        "Gerginlik"<br /><div class="row" id="row">
+                                                            <div class="col-sm-1" id="spacefirst">0</div>
+                                                            <div class="col-sm-1" id="space">1</div>
+                                                            <div class="col-sm-1" id="space">2</div>
+                                                            <div class="col-sm-1" id="space">3</div>
+                                                            <div class="col-sm-1" id="space">4</div>
+                                                            <div class="col-sm-1" id="space">5</div>
+                                                            <div class="col-sm-1" id="space">6</div>
+                                                            <div class="col-sm-1" id="space">7</div>
+                                                            <div class="col-sm-1" id="space">8</div>
+                                                            <div class="col-sm-1" id="spacenineth">9</div>
+                                                            <div class="col-sm-1" id="spaceright">10</div>
+                                                        </div><div class="row" id="row">
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="0"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="1"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="2"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="3"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="4"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="5"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="6"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="7"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="8"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.nrv" type="radio" name="nrv" value="9"></div>
+                                                            <div class="col-sm-1" id="spaceright"><input ng-model="settings.nrv" type="radio" name="nrv" value="10"></div>
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                                <!-- NERVOUSNESS SON -->
+                                                <!-- CONFİDENCE BAŞLANGIÇ -->
+                                                <div class="form-group" id="guven">
+                                                    <p class="nunito">
+                                                        "Güven"<br /><div class="row" id="row">
+                                                            <div class="col-sm-1" id="spacefirst">0</div>
+                                                            <div class="col-sm-1" id="space">1</div>
+                                                            <div class="col-sm-1" id="space">2</div>
+                                                            <div class="col-sm-1" id="space">3</div>
+                                                            <div class="col-sm-1" id="space">4</div>
+                                                            <div class="col-sm-1" id="space">5</div>
+                                                            <div class="col-sm-1" id="space">6</div>
+                                                            <div class="col-sm-1" id="space">7</div>
+                                                            <div class="col-sm-1" id="space">8</div>
+                                                            <div class="col-sm-1" id="spacenineth">9</div>
+                                                            <div class="col-sm-1" id="spaceright">10</div>
+                                                        </div><div class="row" id="row">
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="0"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="1"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="2"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="3"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="4"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="5"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="6"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="7"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="8"></div>
+                                                            <div class="col-sm-1" id="space"><input ng-model="settings.con" type="radio" name="con" value="9"></div>
+                                                            <div class="col-sm-1" id="spaceright"><input ng-model="settings.con" type="radio" name="con" value="10"></div>
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                                <!-- CONFİDENCE SON -->
+                                                <!-- SEANS YORUMLARI BAŞLANGIÇ -->
+                                                <div id="commentsection">
+                                                    <div class="form-group">
+                                                        <h5 style="font-family:poppinsemibold;"> Danışan Yorumları</h5>
+                                                        <textarea rows="5" name="patientcomment" class="nunito" placeholder="Danışan yorumlarını girin" ng-model="settings.pcomment"> </textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <h5 style="font-family:poppinsemibold;"> Terapist Yorumları</h5>
+                                                        <textarea rows="5" name="doctorcomment" class="nunito" placeholder="Terapist yorumlarını girin" ng-model="settings.tcomment"> </textarea>
+                                                    </div>
+                                                </div>
+                                                <!-- SEANS YORUMLARI SON -->
+                                                <button class="btn btn-green btn-cons pull-right" type="submit" id="finalbutton"> Senaryoyu Kaydet</button>
+                                                <br />
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- DEĞERLENDİRME & YORUMLAR (KAYITSIZ) SON -->
+                                    <!-- DEĞERLENDİRME & YORUMLAR (KAYITLI) BAŞLANGIÇ -->
+                                    <div ng-class="{'hidden':doner.done == 0}">
+                                        <form name="form" ng-submit="saveexpo(settings)">
+                                            <div id="others">
+                                                <!-- NERVOUSNESS BAŞLANGIÇ -->
+                                                <div class="form-group" id="gergin">
+                                                    <p class="nunito">
+                                                        "Gerginlik"<br /><div class="row" id="row">
+                                                            <div class="col-sm-1" id="spacefirst">0</div>
+                                                            <div class="col-sm-1" id="space">1</div>
+                                                            <div class="col-sm-1" id="space">2</div>
+                                                            <div class="col-sm-1" id="space">3</div>
+                                                            <div class="col-sm-1" id="space">4</div>
+                                                            <div class="col-sm-1" id="space">5</div>
+                                                            <div class="col-sm-1" id="space">6</div>
+                                                            <div class="col-sm-1" id="space">7</div>
+                                                            <div class="col-sm-1" id="space">8</div>
+                                                            <div class="col-sm-1" id="spacenineth">9</div>
+                                                            <div class="col-sm-1" id="spaceright">10</div>
+                                                        </div>
+                                                        <div class="row" id="row">
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="0" disabled ng-checked="nerv == 0"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="1" disabled ng-checked="nerv == 1"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="2" disabled ng-checked="nerv == 2"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="3" disabled ng-checked="nerv == 3"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="4" disabled ng-checked="nerv == 4"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="5" disabled ng-checked="nerv == 5"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="6" disabled ng-checked="nerv == 6"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="7" disabled ng-checked="nerv == 7"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="8" disabled ng-checked="nerv == 8"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="nerv" value="9" disabled ng-checked="nerv == 9"></div>
+                                                            <div class="col-sm-1" id="spaceright"><input type="radio" name="nerv" value="10" disabled ng-checked="nerv == 10"></div>
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                                <!-- NERVOUSNESS SON -->
+                                                <!-- CONFİDENCE BAŞLANGIÇ -->
+                                                <div class="form-group" id="guven">
+                                                    <p class="nunito">
+                                                        "Güven"<br /><div class="row" id="row">
+                                                            <div class="col-sm-1" id="spacefirst">0</div>
+                                                            <div class="col-sm-1" id="space">1</div>
+                                                            <div class="col-sm-1" id="space">2</div>
+                                                            <div class="col-sm-1" id="space">3</div>
+                                                            <div class="col-sm-1" id="space">4</div>
+                                                            <div class="col-sm-1" id="space">5</div>
+                                                            <div class="col-sm-1" id="space">6</div>
+                                                            <div class="col-sm-1" id="space">7</div>
+                                                            <div class="col-sm-1" id="space">8</div>
+                                                            <div class="col-sm-1" id="spacenineth">9</div>
+                                                            <div class="col-sm-1" id="spaceright">10</div>
+                                                        </div>
+                                                        <div class="row" id="row">
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="0" disabled ng-checked="conf == 0"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="1" disabled ng-checked="conf == 1"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="2" disabled ng-checked="conf == 2"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="3" disabled ng-checked="conf == 3"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="4" disabled ng-checked="conf == 4"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="5" disabled ng-checked="conf == 5"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="6" disabled ng-checked="conf == 6"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="7" disabled ng-checked="conf == 7"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="8" disabled ng-checked="conf == 8"></div>
+                                                            <div class="col-sm-1" id="space"><input type="radio" name="con" value="9" disabled ng-checked="conf == 9"></div>
+                                                            <div class="col-sm-1" id="spaceright"><input type="radio" name="con" value="10" disabled ng-checked="conf == 10"></div>
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                                <!-- CONFİDENCE SON -->
+                                                <!-- SEANS YORUMLARI BAŞLANGIÇ -->
+                                                <div id="commentsection">
+                                                    <div class="form-group">
+                                                        <h5 style="font-family:poppinsemibold;"> Danışan Yorumları</h5>
+                                                        <textarea rows="5" name="patientcomment" class="nunito" placeholder="Danışan yorumlarını girin" disabled ng-model="pat_com"> </textarea>
+                                                    </div>
+                                                    <div class="form-group" id="tcomment">
+                                                        <h5 style="font-family:poppinsemibold;"> Terapist Yorumları</h5>
+                                                        <textarea rows="5" name="doctorcomment" class="nunito" placeholder="Terapist yorumlarını girin" disabled ng-model="doc_com"> </textarea>
+                                                    </div>
+                                                </div>
+                                                <!-- SEANS YORUMLARI SON -->
+                                                <button class="btn btn-green btn-cons pull-right" data-toggle="modal" data-target="#endModal" id="finalbutton">Sonlandır</button>
+                                            </div>
+                                            <br />
+                                        </form>
+                                    </div>
+                                    <!-- DEĞERLENDİRME & YORUMLAR (KAYITLI) SON -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 1.SÜTUN (SEANS SEKMELERİ & DEĞERLENDİRMELER) SON-->
+                        <!-- 2.SÜTUN (YORUMLAR & GRAFİKLER) BAŞLANGIÇ-->
+                        <div class="col-lg-7">
+                            <div class="card card-default m-b-10">
+                                <div class="card-block" id="sagkisim">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="view chat-view bg-white clearfix m-t-5" style="height:67vh">
+                                                <!-- Başlık BAŞLANGIÇ !-->
+                                                <div class="navbar-inner">
+                                                    <div class="view-heading">
+                                                        <h6 class="text-center" style="font-size:15px; font-family:poppinsemibold;">Senaryo Özeti ve Terapist Notları</h6>
+                                                    </div>
+                                                    <br />
+                                                </div>
+                                                <!-- Başlık SON  !-->
+                                                <!-- Yapılan Yorumlar BAŞLANGIÇ  !-->
+                                                <div class="chat-inner" id="my-conversation">
+                                                    <div class="message clearfix" ng-repeat="element in messages">
+                                                        <div class="nunito" ng-class="{true:'pull-left', false:'pull-right'}[element.myvar]">
+                                                            {{element.ctime}}
+                                                        </div>
+                                                        <div class="nunito" ng-class="{true:'chat-bubble from-me', false:'chat-bubble from-them'}[element.myvar]">
+                                                            {{ element.msg }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Yapılan Yorumlar SON  !-->
+                                                <!-- BEGIN Session End ! -->
+                                                <div class="b-t b-grey bg-white clearfix p-l-10 p-r-10"> <div class="row m-t-10 p-t-10"> <div class="col-12 "> <p class="text-center nunito semi-bold" style="font-size:20px"> - Senaryo Sonu -</p> </div> </div> </div>
+                                                <!-- END Session End ! -->
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <!-- İLK GRAFİK BAŞLANGIÇ -->
+                                            <div class="card card-default">
+                                                <div class="card-header">
+                                                    <div style="font-family:poppinsemibold;"> Nabız </div>
+                                                </div>
+                                                <div class="card-block">
+                                                    <div id="chart_container" class="row">
+                                                        <div id="y_axis"></div>
+                                                        <div id="chart"></div>
+                                                    </div>
+                                                    <div id="preview"></div>
+                                                </div>
+                                            </div>
+                                            <!-- İLK GRAFİK SON -->
+                                            <!-- İKİNCİ GRAFİK BAŞLANGIÇ -->
+                                            <div class="card card-default">
+                                                <div class="card-header">
+                                                    <div style="font-family:poppinsemibold;"> Deri İletkenliği </div>
+                                                </div>
+                                                <div class="card-block">
+                                                    <div id="chart_container" class="row">
+                                                        <div id="y_axis2"></div>
+                                                        <div id="chart2"></div>
+                                                    </div>
+                                                    <div id="preview2"></div>
+                                                </div>
+                                            </div>
+                                            <!-- İKİNCİ GRAFİK SON -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-if="audiodata != undefined" class="row">
+                                <div class="col-sm-12">
+
+                                    <audio controls class="playback" ng-src="{{audiodata}}"></audio>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 2.SÜTUN (YORUMLAR & GRAFİKLER) SON-->
+                        <!-- EXPOSURE SONU KARAR MODAL'I BAŞLANGIÇ -->
+                        <div id="endModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div id="options" class="modal-content">
+                                    <div class="modal-header" style="font-family:poppinsemibold; font-size:20px;">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        Exposure Sonu
+                                    </div>
+                                    <div class="modal-body">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="row p-t-30 text-center">
+                                            <button class="btn btn-green btn-cons" ng-click="newone()">Yeni Exposure</button>
+                                            <button class="btn btn-green btn-cons" ng-click="gohome()">Seansı Bitir</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- EXPOSURE SONU KARAR MODAL'I SON -->
+                    </div>
+                </div>
+                <!-- END CONTAINER FLUID -->
+                <!-- START COPYRIGHT -->
+                <div class=" container-fluid  container-fixed-lg footer">
+                    <div class="copyright sm-text-center" id="foot">
+                        <p class="small no-margin pull-left sm-pull-reset">
+                            <span class="hint-text">Copyright &copy; 2018 </span>
+                            <span class="font-montserrat">METAVERSE</span>.
+                            <span class="hint-text">All rights reserved. </span>
+                            <span class="sm-block"><a href="" class="m-l-10 m-r-10">Terms of use</a> <span class="muted">|</span> <a href="" class="m-l-10">Privacy Policy</a></span>
+                        </p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- END COPYRIGHT -->
+            </div>
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+        <div ng-init="init()"></div>
+        <!-- END PAGE LEVEL JS -->
+    </div>
+    <!-- END PAGE CONTAINER -->
+</body>

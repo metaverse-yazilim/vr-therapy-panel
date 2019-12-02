@@ -1,0 +1,271 @@
+﻿.nunito {
+    font-family: nunito;
+}
+.table td {
+    font-family: nunito;
+}
+
+.btn-green {
+    background-color: #27b8f7;
+    color: white;
+    border-radius: 2px;
+    font-family: buttonfont;
+}
+
+    .btn-green:hover {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:visited {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:focus {
+        background-color: #27b8f7;
+        color: white;
+    }
+
+    .btn-green:active {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+.btn:focus, .btn:focus:active, .btn.active:focus {
+    color: white;
+}
+
+#td1st {
+    width: 150px;
+    padding-right: 0px;
+    padding-left: 15px;
+}
+
+#td2st {
+    width: 150px;
+    padding-right: 0px;
+    padding-left: 15px;
+}
+
+.square {
+    width: 34px;
+    height: 34px;
+    padding: 1px;
+}
+
+#jumbo {
+    text-align: center;
+    font-family: nunito;
+    font-weight: 400;
+    font-size: 1.25vw;
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
+
+#blockone {
+    padding-bottom: 13px;
+}
+
+#blocktwo {
+    padding-right: 5px;
+    padding-bottom: 13px;
+}
+
+#blockthree {
+    padding-bottom: 13px;
+}
+
+#blockfour {
+    padding-right: 5px;
+    padding-bottom: 13px;
+}
+
+#blockfive{
+    padding-bottom:5px;
+}
+
+#blocksix {
+    padding-bottom: 10px;
+}
+
+#blockseven {
+    padding-bottom: 12px;
+}
+
+#blockeight {
+    padding-right: 5px;
+    padding-bottom: 12px;
+}
+
+#blockten {
+    padding-bottom: 5px;
+}
+
+#gobutton {
+    position: absolute;
+    top: 450px;
+    right: -41px;
+}
+
+#backbutton {
+    position: absolute;
+    top: 450px;
+    left: 7px;
+}
+
+@media screen and (min-width:1568.25px) and (max-width:1644.95px) {
+
+    #blockone {
+        padding-bottom: 11px;
+    }
+
+    #blocktwo {
+        padding-bottom: 11px;
+    }
+
+    #blockthree {
+        padding-bottom: 3px;
+    }
+
+    #blockfour {
+        padding-bottom: 3px;
+    }
+
+    #blockseven {
+        padding-bottom: 11px;
+    }
+
+    #blockeight {
+        padding-bottom: 11px;
+    }
+}
+
+@media screen and (min-width:1476.26px) and (max-width:1568.24px) {
+
+    #td1st {
+        width: 150px;
+        padding-right: 0px;
+        padding-left: 15px;
+    }
+
+    #td2st {
+        width: 150px;
+        padding-right: 0px;
+        padding-left: 15px;
+    }
+
+    #blockone {
+        padding-bottom: 13px;
+    }
+
+    #blocktwo {
+        padding-right: 5px;
+        padding-bottom: 13px;
+    }
+
+    #blockthree {
+        padding-bottom: 13px;
+    }
+
+    #blockfour {
+        padding-right: 5px;
+        padding-bottom: 13px;
+    }
+
+    #blockfive {
+        padding-bottom: 5px;
+    }
+
+    #blocksix {
+        padding-bottom: 10px;
+    }
+
+    #blockseven {
+        padding-bottom: 12px;
+    }
+
+    #blockeight {
+        padding-right: 5px;
+        padding-bottom: 12px;
+    }
+
+    #blockten {
+        padding-bottom: 5px;
+    }
+
+}
+
+@media screen and (min-width:1400.26px) and (max-width:1476.25px) {
+    #blockone {
+        padding-bottom: 10px;
+    }
+
+    #blocktwo {
+        padding-bottom: 10px;
+    }
+
+    #blockthree {
+        padding-bottom: 3px;
+    }
+
+    #blockfour {
+        padding-bottom: 3px;
+    }
+
+    #blockseven {
+        padding-bottom: 12px;
+    }
+
+    #blockeight {
+        padding-bottom: 12px;
+    }
+
+    #blockten {
+        padding-bottom: 4px;
+    }
+}
+
+@media screen and (max-width:1400.25px) {
+    #blockone {
+        padding-bottom: 10px;
+    }
+
+    #blocktwo {
+        padding-bottom: 10px;
+    }
+
+    #blockthree {
+        padding-bottom: 3px;
+    }
+
+    #blockfour {
+        padding-bottom: 3px;
+    }
+
+    #blockseven {
+        padding-bottom: 12px;
+    }
+
+    #blockeight {
+        padding-bottom: 12px;
+    }
+
+    #blockten {
+        padding-bottom: 4px;
+    }
+}
+
+/*@media screen and (max-width:1498px) {
+    #chosetable {
+        min-width: 442px;
+        display: inline-block;
+    }
+}*/
+
+
+#send {
+    width: 150px;
+    height: 50px;
+    border: none;
+}

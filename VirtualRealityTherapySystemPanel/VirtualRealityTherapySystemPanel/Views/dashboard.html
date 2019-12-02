@@ -1,0 +1,22 @@
+<div ng-init="init()"></div>
+<div class="container-fluid">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                            <tr ng-repeat="post in TodoListList">
+                                <td>
+                                    {{post.Comment}}
+                                </td>
+                                <td>
+                                    <span class="label label-success" ng-show="post.IsDone">Done</span>
+                                    <span class="label label-danger" ng-show="!post.IsDone">In Process</span>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

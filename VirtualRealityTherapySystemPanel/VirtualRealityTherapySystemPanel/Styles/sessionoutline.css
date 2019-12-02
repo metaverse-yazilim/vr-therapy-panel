@@ -1,0 +1,203 @@
+﻿.btn-green {
+    background-color: #27b8f7;
+    color: white;
+    border-radius: 2px;
+    font-family: buttonfont;
+}
+
+    .btn-green:hover {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:visited {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:focus {
+        background-color: #27b8f7;
+        color: white;
+    }
+
+    .btn-green:active {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+.btn:focus, .btn:focus:active, .btn.active:focus {
+    color: white;
+}
+
+#sekmeler {
+    /*margin:0px 0px 0px 0px;*/
+    padding: 0px 0px 1px 0px;
+}
+
+#others {
+    padding: 10px 20px 10px 20px;
+}
+
+#blue {
+    background-color:cornflowerblue
+}
+
+#blueish{
+    background-color:azure
+}
+
+#corn{
+    background-color:cornsilk
+}
+
+#chart_container {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#chart {
+    position: relative;
+    left: 40px;
+}
+
+#y_axis {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+}
+
+#preview {
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+#chart2 {
+    position: relative;
+    left: 40px;
+}
+
+#y_axis2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+}
+
+#preview2 {
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+#foot {
+    padding-top: 15px;
+}
+
+#container {
+    height: 94vh;
+}
+
+.nunito {
+    font-family: nunito;
+}
+
+#audio {
+    width: calc(710px + 104 * ((100vw - 1600px) /320));
+    height: 30px;
+}
+
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+#spacefirst {
+    margin: 0px;
+    width: 10px;
+    padding-top: 0px;
+    padding-right: calc(51px + 9 * ((100vw - 1600px) /320));
+    padding-left: 2px;
+    padding-bottom: 0px;
+}
+
+#spacenineth {
+    margin: 0px;
+    width: 10px;
+    padding-top: 0px;
+    padding-right: calc(49px + 9 * ((100vw - 1600px) /320));
+    padding-left: 0px;
+    padding-bottom: 0px;
+}
+
+#space {
+    margin: 0px;
+    width: 10px;
+    padding-top: 0px;
+    padding-right: calc(51px + 9 * ((100vw - 1600px) /320));
+    padding-left: 0px;
+    padding-bottom: 0px;
+}
+
+#spaceright {
+    margin: 0px;
+    width: 10px;
+    padding: 0px;
+}
+
+#row {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.nav-tabs ~ .tab-content {
+    padding-top: 0px;
+    padding-bottom: calc(0px + 15 * ((100vw - 1600px) /320));
+}
+
+#guven {
+    margin-bottom: calc(0px + 5 * ((100vw - 1600px) /320));
+}
+
+#gergin {
+    margin-bottom: calc(5px + 15 * ((100vw - 1600px) /320));
+    margin-top: calc(5px + 10 * ((100vw - 1600px) /320));
+}
+
+#finalbutton {
+    margin-right: 20px;
+    margin-top: calc(10px + 25 * ((100vw - 1600px) /320));
+    margin-bottom: calc(15px + 10 * ((100vw - 1600px) /320));
+}
+
+#commentsection {
+    margin-top: calc(10px + 25 * ((100vw - 1600px) /320));
+}
+
+#pagetop {
+    padding-top: calc(0px + 25 * ((100vw - 1600px) /320));
+}
+
+#tcomment {
+    margin-top: calc(0px + 25 * ((100vw - 1600px) /320));
+}
+
+#baslik {
+    margin-bottom: 0px;
+    padding-bottom: calc(5px + 10 * ((100vw - 1600px) /320));
+    font-family: poppinsemibold;
+}
+
+
+audio {
+    width: 100%;
+}
+
+#sagkisim {
+    padding-bottom: 5px;
+    padding-top: 10px;
+}

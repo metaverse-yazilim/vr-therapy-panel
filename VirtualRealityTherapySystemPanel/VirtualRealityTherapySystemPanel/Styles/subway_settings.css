@@ -1,0 +1,305 @@
+﻿.nunito {
+    font-family: nunito;
+}
+.table td {
+    font-family: nunito;
+}
+
+.btn-green {
+    background-color: #27b8f7;
+    color: white;
+    border-radius: 2px;
+    font-family: buttonfont;
+}
+
+    .btn-green:hover {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:visited {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:focus {
+        background-color: #27b8f7;
+        color: white;
+    }
+
+    .btn-green:active {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+.btn:focus, .btn:focus:active, .btn.active:focus {
+    color: white;
+}
+
+#myButton1 {
+    position: absolute;
+    top: 145px;
+    left: 275px;
+    width: 30px;
+    height: 25px;
+}
+
+#myButton2 {
+    position: absolute;
+    top: 145px;
+    left: 190px;
+    width: 30px;
+    height: 25px;
+}
+
+#myButton3 {
+    position: absolute;
+    top: 180px;
+    left: 275px;
+    width: 30px;
+    height: 25px;
+}
+
+#myButton4 {
+    position: absolute;
+    top: 180px;
+    left: 190px;
+    width: 30px;
+    height: 25px;
+}
+
+.td1st {
+    width: 150px;
+}
+
+.square {
+    width: 34px;
+    height: 34px;
+    padding: 1px;
+}
+
+#jumbo {
+    text-align: center;
+    font-family: nunito;
+    font-weight: 400;
+    font-size: 1.25vw;
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
+#blocktwo {
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+#blockeight {
+    padding-bottom: 5px;
+}
+
+#blockfour {
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+#blocksix {
+    padding-bottom: 10px;
+}
+
+#gobutton {
+    position: absolute;
+    top: 416px;
+    right: 31px;
+}
+
+#backbutton {
+    position: absolute;
+    top: 416px;
+    left: 7px;
+}
+
+@media screen and (min-width:1629.25px) and (max-width:1751.95px) {
+    .marginer {
+        margin-bottom: 6px;
+    }
+
+    #blockseven {
+        padding-top: 15px;
+    }
+
+    #blockeight {
+        padding-top: 15px;
+        padding-bottom: 3px;
+    }
+
+    #blockthree {
+        padding-top: 14px;
+        padding-bottom: 10px;
+    }
+
+    #blockfour {
+        padding-top: 14px;
+    }
+
+    #blockfive {
+        padding-top: 14px;
+        padding-bottom: 10px;
+    }
+
+    #blocksix {
+        padding-top: 14px;
+    }
+}
+
+@media screen and (min-width:1616.26px) and (max-width:1629.24px) {
+    .marginer {
+        margin-bottom: 6px;
+    }
+
+    #blockseven {
+        padding-top: 10px;
+    }
+
+    #blockeight {
+        padding-top: 10px;
+        padding-bottom: 0px;
+    }
+
+    #blockthree {
+        padding-top: 14px;
+        padding-bottom: 7px;
+    }
+
+    #blockfour {
+        padding-top: 14px;
+        padding-bottom: 7px;
+    }
+
+    #blockfive {
+        padding-top: 14px;
+        padding-bottom: 7px;
+    }
+
+    #blocksix {
+        padding-top: 14px;
+        padding-bottom: 7px;
+    }
+
+    #blocktwo {
+        padding-right: 5px;
+        padding-bottom: 0px;
+        padding-top: 13px;
+    }
+
+    #blockone {
+        padding-right: 5px;
+        padding-bottom: 0px;
+        padding-top: 13px;
+    }
+}
+
+@media screen and (min-width:1400.26px) and (max-width:1616.25px) {
+    .marginer {
+        margin-bottom: 3px;
+    }
+
+    #blockseven {
+        padding-top: 8px;
+    }
+
+    #blockeight {
+        padding-top: 8px;
+        padding-bottom: 0px;
+    }
+
+    #blockthree {
+        padding-top: 9px;
+        padding-bottom: 4px;
+    }
+
+    #blockfour {
+        padding-top: 9px;
+        padding-bottom: 4px;
+    }
+
+    #blockfive {
+        padding-top: 9px;
+        padding-bottom: 4px;
+    }
+
+    #blocksix {
+        padding-top: 9px;
+        padding-bottom: 4px;
+    }
+
+    #blocktwo {
+        padding-right: 5px;
+        padding-bottom: 0px;
+        padding-top: 13px;
+    }
+
+    #blockone {
+        padding-right: 5px;
+        padding-bottom: 0px;
+        padding-top: 13px;
+    }
+
+    #denymargin {
+        margin-bottom: 3px;
+    }
+}
+@media screen and (max-width:1400.25px) {
+    .marginer {
+        margin-bottom: 5px;
+    }
+
+    #blockseven {
+        padding-top: 10px;
+    }
+
+    #blockeight {
+        padding-top: 10px;
+        padding-bottom: 0px;
+    }
+
+    #blockthree {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    #blockfour {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    #blockfive {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    #blocksix {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    #blocktwo {
+        padding-right: 5px;
+        padding-bottom: 3px;
+        padding-top: 15px;
+    }
+
+    #blockone {
+        padding-right: 5px;
+        padding-bottom: 3px;
+        padding-top: 15px;
+    }
+
+    #denymargin {
+        margin-bottom: 5px;
+    }
+}
+
+
+#send {
+    width: 150px;
+    height: 50px;
+    border: none;
+}

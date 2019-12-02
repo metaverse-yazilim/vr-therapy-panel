@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body class="fixed-header">
+	<link href="../Styles/login.css" rel="stylesheet" type="text/css" />
+	<div id="Terapist" class="login-wrapper">
+		<div class="bg-pic bg-pica"></div>
+		<img src="../Images/vrsocial2.jpg" id="imglogin" />
+		<div class="mytitle"> <h1 class="text-left white text1">Sosyal Fobilere Yönelik Sanal Gerçeklik ile Maruz Bırakma Terapisi</h1> </div>
+		<div class="mytitle2"> <h2 class="text-left white text2">Korkularınızla yüzleşmenin en etkili yolu.</h2> </div>
+		<a href="http://metaverse.com.tr" class="btn-black text-center" id="detaylar"> Detaylar </a>
+		<!--<a href="http://metaverse.com.tr" class="btn btn-primary" id="detaylar2">Detayalar</a>-->
+		<!-- START Login Right Container-->
+		<div class="mylogin">
+			<div class="centerized">
+				<div id="logovr">
+					<img src="../Images/vr-social-logo-twoline.png" height="115" width="180" />
+				</div>
+				<div class="tab">
+					<button id="terapist" class=" btn-green btn-cons tablinks m-r-15" onclick="openlogin(event, 'Terapist')">Terapist</button>
+					<button id="danisan" class="btn-gray btn-cons tablinks " onclick="openlogin(event, 'Danisan')">Danışan</button>
+				</div>
+				<div ng-init="init()"></div>
+				<div class="" id="loginform">
+					<!-- START Login Form -->
+					<form name="form" ng-submit="userLogin(Login)" id="form-login" class="p-t-5" role="form">
+						<!-- START Form Control-->
+						<p class="nunito" style="font-size:20px; margin-bottom:17px;">Kullanıcı Adı</p>
+						<div class="form-group form-group-default usermargin">
+							<div class="controls controlsa">
+								<input type="text" ng-model="Login.Username" name="username" id="username" placeholder="Kullanıcı Adı" class="form-control nunito blacktext inputbox" required>
+							</div>
+						</div>
+						<!-- END Form Control-->
+						<!-- START Form Control-->
+						<p class="nunito" style="font-size:20px; margin-bottom:17px;">Şifre</p>
+						<div class="form-group form-group-default passmargin">
+							<div class="controls controlsa">
+								<input type="password" class="form-control inputbox" ng-model="Login.Password" name="password" id="password" placeholder="Şifre" required>
+							</div>
+						</div>
+						<!-- START Form Control-->
+						<div class="row">
+							<div class="col-md-6 no-padding">
+								<input type="checkbox" checked="checked" name="remember" ng-model="Login.remember"><a class="nunito blacktext m-l-5">Beni Hatırla</a>
+							</div>
+							<div class="col-md-6">
+								<a href="" data-toggle="modal" data-target="#resetModal" class="blacktext pull-right nunito">Şifremi Unuttum</a>
+							</div>
+						</div>
+						<!--<div class="g-recaptcha" data-sitekey="6LfuylsUAAAAAG51_c5UNXG8E5Jkfg17bWiuXToV">-->
+						<!-- 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI -->
+						<!--</div>-->
+						<!-- END Form Control-->
+						<div class="row">
+							<button class="btn btn-green" id="giris" type="submit" ng-click="toggle()">Giriş</button>
+						</div>
+					</form>
+					<!--END Login Form-->
+					<hr />
+					<div class="text-left m-t-20">
+						<a href="../#/register" class=" nunito redtext">Yeni Hesap Oluştur</a>
+					</div>
+					<div class="mycopyright"><h5 class=" nunito m-b-0 m-t-0" style="font-size:16px;">© Metaverse Yazılım. Tüm hakları saklıdır.</h5></div>
+				</div>
+			</div>
+		</div>
+		<!-- END Login Right Container-->
+	</div>
+	<!-- ŞİFRE YENİLEME MODAL BAŞLANGIÇ-->
+	<div id="resetModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div id="Sure" class="modal-content">
+				<!-- BAŞLIK BAŞLANGIÇ-->
+				<div class="modal-header text-left">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="forgothead">Şifremi unuttum</h4>
+					<hr style="margin-top:18px; margin-bottom:25px;"/>
+				</div>
+				<!-- BAŞLIK SON-->
+				<!-- EMAİL İÇİN FORM BAŞLANGIÇ-->
+				<form name="form" ng-submit="resetpass(emailform)" novalidate>
+					<div ng-class="{'hiddenthing':hiddenthing == 1}">
+						<div class="modal-body">
+							<div>
+								<!-- EMAİL BAŞLANGIÇ-->
+								<h6 class="nunito" style="font-size:17px; margin-bottom:45px;">Şifre yenileme bağlantısı için e-posta adresinizi giriniz.</h6>
+								<h6 class="nunito" style="font-size:17px; margin-bottom:15px;">E-posta</h6>
+								<div class="form-group form-group-default">
+									<div class="controls">
+										<input type="text" ng-model="emailform.email" name="email" id="email" placeholder="E-posta adresinizi girin" class="form-control" required>
+									</div>
+								</div>
+								<!-- EMAİL SON-->
+							</div>
+							<div ng-class="{'hiddenthing':(hiddenthing != 2)}">
+								<p class="alert-danger nunito">E-posta adresi sisteme kayıtlı değil.</p>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn-green pull-left" id="send">Gönder</button>
+						</div>
+					</div>
+				</form>
+				<div ng-class="{'hiddenthing':(hiddenthing == 0)||(hiddenthing == 2)}">
+					<div class="modal-body">
+						<p></p>
+						<h6 class="nunito" style="font-size:15px;">Lütfen e-posta adresinize gelem mail aracılığıyla şifrenizi değiştiriniz.</h6>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Geri</button>
+					</div>
+				</div>
+				<!-- EMAİL İÇİN FORM SON-->
+			</div>
+		</div>
+	</div>
+	<!-- ŞİFRE YENİLEME MODAL BAŞLANGIÇ-->
+	<div id="Danisan" class="login-wrapper">
+		<div class="bg-pic bg-picb"></div>
+		<img src="../Images/vrsocial2.jpg" id="imglogin" />
+		<div class="mytitle"> <h1 class="text-left white text1">Sosyal Fobilere Yönelik Sanal Gerçeklik ile Maruz Bırakma Terapisi</h1> </div>
+		<div class="mytitle2"> <h2 class="text-left white text2">Korkularınızla yüzleşmenin en etkili yolu.</h2> </div>
+		<a href="http://metaverse.com.tr" class="btn-black text-center" id="detaylar">Detaylar</a>
+		<!-- START Login Right Container-->
+		<div class="mylogin">
+			<div class="centerized">
+				<div id="logovr">
+					<img src="../Images/vr-social-logo-twoline.png" height="115" width="180" />
+				</div>
+				<div class="tab">
+					<button id="terapist" class="tablinks btn-gray btn-cons m-r-15" onclick="openlogin(event, 'Terapist')">Terapist</button>
+					<button id="danisan" class="tablinks btn-green btn-cons" onclick="openlogin(event, 'Danisan')">Danışan</button>
+				</div>
+				<div ng-init="init()"></div>
+				<div class="" id="loginform">
+					<!-- START Login Form -->
+					<form name="form" ng-submit="hastaLogin(Login2)" id="form-login" class="p-t-5" role="form">
+						<!-- START Form Control-->
+						<p class="nunito" style="font-size:20px; margin-bottom:17px;">Kullanıcı Adı</p>
+						<div class="form-group form-group-default usermargin">
+							<div class="controls controlsa">
+								<input type="text" ng-model="Login2.Username" name="username" id="username" placeholder="User Name" class="form-control nunito blacktext inputbox" required>
+							</div>
+						</div>
+						<!-- END Form Control-->
+						<!-- START Form Control-->
+						<p class="nunito" style="font-size:20px; margin-bottom:17px;">Şifre</p>
+						<div class="form-group form-group-default passmargin">
+							<div class="controls controlsa">
+								<input type="password" ng-model="Login2.Password" name="password" id="password" placeholder="Credentials" class="form-control inputbox" required>
+							</div>
+						</div>
+						<!-- START Form Control-->
+						<div class="row">
+							<div class="col-md-6 no-padding">
+								<input type="checkbox" checked="checked" name="remember" ng-model="Login2.remember"><a class="nunito blacktext m-l-5">Beni Hatırla</a>
+							</div>
+							<div class="col-md-6">
+								<a href="" data-toggle="modal" data-target="#resetModalD" class="blacktext pull-right nunito">Şifremi Unuttum</a>
+							</div>
+						</div>
+						<!-- END Form Control-->
+						<div class="row">
+							<button class="btn btn-green" id="giris" type="submit">Giriş</button>
+						</div>
+					</form>
+					<hr style="margin-bottom:43px;"/>
+					<!--END Login Form-->
+					<div class="mycopyright"><h5 class=" nunito m-b-0 m-t-0" style="font-size:16px;">© Metaverse Yazılım. Tüm hakları saklıdır.</h5></div>
+				</div>
+			</div>
+		</div>
+		<!-- END Login Right Container-->
+	</div>
+
+	<!-- DANIŞAN ŞİFRE YENİLEME MODAL BAŞLANGIÇ-->
+	<div id="resetModalD" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div id="Sure" class="modal-content">
+				<!-- BAŞLIK BAŞLANGIÇ-->
+				<div class="modal-header text-left">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="forgothead">Şifremi unuttum</h4>
+					<hr style="margin-top:18px; margin-bottom:25px;" />
+				</div>
+				<!-- BAŞLIK SON-->
+				<!-- EMAİL İÇİN FORM BAŞLANGIÇ-->
+				<form name="form" ng-submit="resetpassp(emailform2)" novalidate>
+					<div ng-class="{'hiddenthing':hiddenthingp == 1}">
+						<div class="modal-body">
+							<div>
+								<!-- EMAİL BAŞLANGIÇ-->
+								<h6 class="nunito" style="font-size:17px; margin-bottom:45px;">Şifre yenileme bağlantısı için e-posta adresinizi giriniz.</h6>
+								<h6 class="nunito" style="font-size:17px; margin-bottom:15px;">E-posta</h6>
+								<div class="form-group form-group-default">
+									<div class="controls">
+										<input type="text" ng-model="emailform2.email" name="email" id="email" placeholder="E-posta adresinizi girin" class="form-control" required>
+									</div>
+								</div>
+								<!-- EMAİL SON-->
+							</div>
+							<div ng-class="{'hiddenthing':(hiddenthingp != 2)}">
+								<p class="alert-danger nunito">E-posta adresi sisteme kayıtlı değil.</p>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn-green pull-left" id="send">Gönder</button>
+						</div>
+					</div>
+				</form>
+				<div ng-class="{'hiddenthing':(hiddenthingp == 0)||(hiddenthingp == 2)}">
+					<div class="modal-body">
+						<p></p>
+						<h6 class="nunito" style="font-size:15px;">Lütfen e-posta adresinize gelem mail aracılığıyla şifrenizi değiştiriniz.</h6>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Geri</button>
+					</div>
+				</div>
+				<!-- EMAİL İÇİN FORM SON-->
+			</div>
+		</div>
+	</div>
+	<!-- DANIŞAN ŞİFRE YENİLEME MODAL BAŞLANGIÇ-->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script>
+		function openlogin(evt, usertype) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("login-wrapper");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(usertype).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+	</script>
+
+	<!--<script>
+	$(function()
+	{
+	  $('#form-login').validate()
+	})
+	</script>-->
+</body>
+</html>
+
+
+

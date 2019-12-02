@@ -1,0 +1,356 @@
+﻿<body class="fixed-header ">
+	<link href="../Styles/amfi100_settings.css" rel="stylesheet" type="text/css" />
+	<!-- BEGIN SIDEBPANEL-->
+	<nav class="page-sidebar" data-pages="sidebar">
+		<!-- BEGIN SIDEBAR MENU HEADER-->
+		<div class="sidebar-header">
+			<img src="../Images/vr-social-logo-oneline-gri2.png" width="158" height="25">
+		</div>
+		<!-- END SIDEBAR MENU HEADER-->
+		<!-- START SIDEBAR MENU -->
+		<div class="sidebar-menu">
+			<!-- BEGIN SIDEBAR MENU ITEMS-->
+			<ul class="menu-items">
+				<li class="m-t-30 ">
+					<a href="../#/loggedin" class="detailed">
+						<span class="title nunito">Danışan Listesi</span>
+					</a>
+					<span class="icon-thumbnail"><i class="pg-home"></i></span>
+				</li>
+				<li class="">
+					<a href="../#/patregister" class="detailed">
+						<span class="title nunito">Danışan Ekle</span>
+					</a>
+					<span class="icon-thumbnail"><i class="pg-plus"></i></span>
+				</li>
+				<li class="">
+					<a href="../#/newsession"><span class="title nunito">Seans Ekle</span></a>
+					<span class="icon-thumbnail"><i class="pg-clock"></i></span>
+				</li>
+				<!--<li>
+					<a href=""><span class="title">Takvim</span></a>
+					<span class="icon-thumbnail"><i class="pg-calender"></i></span>
+				</li>
+				<li class="">
+					<a href=""><span class="title">Ayarlar</span></a>
+					<span class="icon-thumbnail"><i class="pg-settings"></i></span>
+				</li>-->
+				<li>
+					<a ng-click="userLogout()"><span class="title nunito">Çıkış Yap</span></a>
+					<span class="icon-thumbnail"><i class="pg-power"></i></span>
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<!-- END SIDEBAR MENU -->
+	</nav>
+	<!-- END SIDEBAR -->
+	<!-- END SIDEBPANEL-->
+	<!-- START PAGE-CONTAINER -->
+	<div class="page-container" style="height:92vh" id="page">
+		<!-- START HEADER -->
+		<div class="header ">
+			<!-- START MOBILE SIDEBAR TOGGLE -->
+			<a href="#" class="btn-link toggle-sidebar hidden-lg hidden-md pg-menu" data-toggle="sidebar"></a>
+			<!-- END MOBILE SIDEBAR TOGGLE -->
+			<div class="">
+				<div class="brand inline ">
+					<img src="../Images/vr-social-logo-oneline.png" width="158" height="25">
+				</div>
+				<!-- START NOTIFICATION LIST -->
+				<!-- END NOTIFICATIONS LIST -->
+			</div>
+			<div class="d-flex align-items-center">
+				<!-- START User Info-->
+				<div class="pull-left p-r-10 fs-16 font-heading hidden-md-down nunito bold">
+					<span>{{testa.name}} {{testa.surname}}</span>
+				</div>
+				<!--<div class="dropdown pull-right hidden-md-down">
+					<button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="thumbnail-wrapper d32 circular inline">
+							<img src="../Images/profiles/avatar.jpg" alt="" data-src="../Images/profiles/avatar.jpg" data-src-retina="../Images/profiles/avatar_small2x.jpg" width="32" height="32">
+						</span>
+					</button>
+					<div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
+						<a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>
+						<a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>
+						<a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>
+						<a href="../login" ng-click="userLogout()" class="clearfix bg-master-lighter dropdown-item">
+							<span class="pull-left">Logout</span>
+							<span class="pull-right"><i class="pg-power"></i></span>
+						</a>
+					</div>
+				</div>-->
+				<!-- END User Info-->
+				<!--<a href="#" class="header-icon pg pg-alt_menu btn-link m-l-10 sm-no-margin d-inline-block" data-toggle="quickview" data-toggle-element="#quickview"></a>-->
+			</div>
+		</div>
+		<!-- END HEADER -->
+		<!-- START PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrapper">
+			<!-- START PAGE CONTENT -->
+			<div class="content p-t-15">
+				<h1 class="text-center" style="font-family:poppinsemibold; font-size:1.40vw; line-height:50px;">Senaryo Ayarları</h1>
+				<!-- START JUMBOTRON -->
+				<div class="jumbotron" data-pages="parallax">
+					<div class=" container-fluid">
+						<div class="" id="jumbo">
+							<b>{{testa.newsessionername}}</b> için <b>Konferans Sunumu</b> senaryo ayarlarını yapınız.
+						</div>
+					</div>
+				</div>
+				<!-- END JUMBOTRON -->
+				<!-- START CONTAINER FLUID -->
+				<div class=" container-fluid container-fixed-lg">
+					<!-- BEGIN PlACE PAGE CONTENT HERE -->
+					<div ng-class="{'col-lg-8 col-lg-push-2':width > 1568,'col-lg-9 col-lg-push-2': width < 1569}">
+						<form name="form" ng-submit="amfi100(settings)" id="form-login" class="p-t-15" role="form">
+							<div class="row">
+								<div class="col-lg-6 no-padding">
+									<table class="table m-t-0" id="chosetable">
+										<tr>
+											<td id="blockone" class="td1st"><label>Katılımcı Sayısı</label></td>
+											<td id="blocktwo">
+												<!-- AVATAR SAYISI SEÇİMİ BAŞLANGIÇ -->
+												<div class="form-group">
+													<input ng-model="settings.crowd" type="radio" name="crowd" value="0"> %20
+													<input ng-model="settings.crowd" type="radio" name="crowd" value="1"> %40
+													<input ng-model="settings.crowd" type="radio" name="crowd" value="2"> %60
+													<input ng-model="settings.crowd" type="radio" name="crowd" value="3"> %80
+													<input ng-model="settings.crowd" type="radio" name="crowd" value="4"> %100
+													<!-- AVATAR SAYISI SEÇİMİ SON -->
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td id="blockthree" class="td1st"><label>Cinsiyet Dağılımı E/K</label></td>
+											<td id="blockfour">
+												<!-- CİNSİYET ORANI SEÇİMİ BAŞLANGIÇ -->
+												<div class="form-group">
+													<input ng-model="settings.gender" type="radio" name="gender" value="0"> 0/100
+													<input ng-model="settings.gender" type="radio" name="gender" value="1"> 25/75
+													<input ng-model="settings.gender" type="radio" name="gender" value="2"> 50/50
+													<input ng-model="settings.gender" type="radio" name="gender" value="3"> 75/25
+													<input ng-model="settings.gender" type="radio" name="gender" value="4"> 100/0
+												</div>
+												<!-- CİNSİYET ORANI SEÇİMİ SON -->
+											</td>
+										</tr>
+										<tr>
+											<td id="blockfive" class="td2st"><label>Katılımcı Yaş Ortalaması</label></td>
+											<td id="blocksix">
+												<!-- YAŞ SEÇİMİ BAŞLANGIÇ -->
+												<div class="form-group">
+													<input ng-model="settings.age" type="radio" name="age" value="1"> Genç
+													<input ng-model="settings.age" type="radio" name="age" value="2"> Orta Yaşlı
+													<input ng-model="settings.age" type="radio" name="age" value="3"> Yaşlı
+												</div>
+												<!-- YAŞ SEÇİMİ SON -->
+											</td>
+										</tr>
+										<tr>
+											<td id="blockseven" class="td1st"><label>Katılımcı Kontrolü</label></td>
+											<td id="blockeight">
+												<!-- KONTROL SEÇİMİ BAŞLANGIÇ -->
+												<div class="form-group">
+													<input ng-model="settings.control" type="radio" name="control" value="0"> Terapist
+													<input ng-model="settings.control" type="radio" name="control" value="1"> Otonom
+												</div>
+												<!-- KONTROL SEÇİMİ SON -->
+											</td>
+										</tr>
+										<tr>
+											<td id="blocknine" class="td1st nunito"><label>Katılımcı Tutumları</label></td>
+											<td id="blockten">
+												<!-- DAVRANIŞ SEÇİMİ BAŞLANGIÇ -->
+												<div>
+													<p class="text-left nunito">Senaryodaki katılımcı tutumlarının yüzdelik oranlarını seçiniz.</p>
+												</div>
+												<div class="row">
+													<div class="col-sm-6">
+														<div class="row">
+															<div class="col-lg-6">
+																<div class="form-group dropdown text-center">
+																	<button class="btn square" type="button" data-toggle="dropdown" title="İlgili">
+																		<img src="../Images/smile.png" width="32" height="32" />
+																	</button>
+																	<ul class="dropdown-menu">
+																		<li ng-class="{'active':settings.conditions == 0}"><a ng-click="percentsup0()">%0</a></li>
+																		<li ng-class="{'active':settings.conditions == 25,'disabled': availables < 25}"><a ng-click="percentsup25()">%25</a></li>
+																		<li ng-class="{'active':settings.conditions == 50,'disabled': availables < 50}"><a ng-click="percentsup50()">%50</a></li>
+																		<li ng-class="{'active':settings.conditions == 75,'disabled': availables < 75}"><a ng-click="percentsup75()">%75</a></li>
+																		<li ng-class="{'active':settings.conditions == 100,'disabled': availables < 100}"><a ng-click="percentsup100()">%100</a></li>
+																	</ul>
+																</div>
+															</div>
+															<div class="col-lg-6">
+																<div class="form-group dropdown text-center">
+																	<button class="btn square" type="button" data-toggle="dropdown" title="Reddedici">
+																		<img src="../Images/angry.png" width="32" height="32" />
+																	</button>
+																	<ul class="dropdown-menu">
+																		<li ng-class="{'active':settings.conditionr == 0} "><a ng-click="percentrej0()">%0</a></li>
+																		<li ng-class="{'active':settings.conditionr == 25,'disabled': availabler < 25}"><a ng-click="percentrej25()">%25</a></li>
+																		<li ng-class="{'active':settings.conditionr == 50,'disabled': availabler < 50}"><a ng-click="percentrej50()">%50</a></li>
+																		<li ng-class="{'active':settings.conditionr == 75,'disabled': availabler < 75}"><a ng-click="percentrej75()">%75</a></li>
+																		<li ng-class="{'active':settings.conditionr == 100,'disabled': availabler < 100}"><a ng-click="percentrej100()">%100</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="row p-b-0">
+															<div class="col-lg-4 col-lg-push-1">
+																<p class="text-center denymargin" style="font-size:14px">%{{settings.conditions}}</p>
+															</div>
+															<div class="col-lg-4 col-lg-push-3 ">
+																<p class="text-center denymargin" style="font-size:14px">%{{settings.conditionr}}</p>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-6">
+														<div class="row">
+															<div class="col-lg-6">
+																<div class="form-group dropdown text-center">
+																	<button class="btn square" type="button" data-toggle="dropdown" title="İlgisiz">
+																		<img src="../Images/uninterested.png" width="32" height="32" />
+																	</button>
+																	<ul class="dropdown-menu">
+																		<li ng-class="{'active':settings.conditionu == 0}"><a ng-click="percentunint0()">%0</a></li>
+																		<li ng-class="{'active':settings.conditionu == 25,'disabled': availableu < 25}"><a ng-click="percentunint25()">%25</a></li>
+																		<li ng-class="{'active':settings.conditionu == 50,'disabled': availableu < 50}"><a ng-click="percentunint50()">%50</a></li>
+																		<li ng-class="{'active':settings.conditionu == 75,'disabled': availableu < 75}"><a ng-click="percentunint75()">%75</a></li>
+																		<li ng-class="{'active':settings.conditionu == 100,'disabled': availableu < 100}"><a ng-click="percentunint100()">%100</a></li>
+																	</ul>
+																</div>
+															</div>
+															<div class="col-lg-6">
+																<div class="form-group dropdown text-center">
+																	<button class="btn square" type="button" data-toggle="dropdown" title="Nötr">
+																		<img src="../Images/Neutral.png" width="32" height="32" />
+																	</button>
+																	<ul class="dropdown-menu">
+																		<li ng-class="{'active':settings.conditionn == 0}"><a ng-click="percentneu0()">%0</a></li>
+																		<li ng-class="{'active':settings.conditionn == 25,'disabled': availablen < 25}"><a ng-click="percentneu25()">%25</a></li>
+																		<li ng-class="{'active':settings.conditionn == 50,'disabled': availablen < 50}"><a ng-click="percentneu50()">%50</a></li>
+																		<li ng-class="{'active':settings.conditionn == 75,'disabled': availablen < 75}"><a ng-click="percentneu75()">%75</a></li>
+																		<li ng-class="{'active':settings.conditionn == 100,'disabled': availablen < 100}"><a ng-click="percentneu100()">%100</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="row p-b-0">
+															<div class="col-lg-6">
+																<p class="text-center denymargin" style="font-size:14px">%{{settings.conditionu}}</p>
+															</div>
+															<div class="col-lg-4 col-lg-push-1">
+																<p class="text-center denymargin" style="font-size:14px">%{{settings.conditionn}}</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- DAVRANIŞ SEÇİMİ SON -->
+											</td>
+										</tr>
+									</table>
+								</div>
+								<!-- AMFİ100 RESMİ BAŞLANGIÇ -->
+								<div class="col-lg-6">
+									<img src="../Images/ScenePhotos/Amfi100_Front.jpg" width="560" height="420" />
+									<button class="btn btn-green btn-cons m-t-10" type="submit" id="gobutton">Senaryoyu Başlat</button>
+									<a class="btn btn-green btn-cons m-t-10" href="../#/startsession" id="backbutton">Senaryo Değiştir</a>
+								</div>
+								<!-- AMFİ100 RESMİ SON -->
+							</div>
+						</form>
+					</div>
+					<!-- END PLACE PAGE CONTENT HERE -->
+					<!-- START tutummodal -->
+					<div id="tutumModal" class="modal fade blured" role="dialog">
+						<div class="modal-dialog">
+							<div id="Sure" class="modal-content">
+								<!-- SEÇİLİ AVATAR İSMİ BAŞLANGIÇ-->
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+								</div>
+								<!-- SEÇİLİ AVATAR İSMİ SON-->
+								<!-- SEÇİLİ AVATAR SEANS DETAYLARI BAŞLANGIÇ-->
+								<div class="modal-body">
+									<div>
+										<!-- BİLGİLER BAŞLANGIÇ-->
+										<p></p>
+										<p style="font-size:14px;">Senaryodaki katılımcı tutumlarının yüzdelik oranlarını seçiniz.</p>
+										<!-- BİLGİLER SON-->
+									</div>
+								</div>
+								<!-- SEÇİLİ AVATAR SEANS DETAYLARI SON-->
+								<div class="modal-footer">
+									<div class="col-12 text-center">
+										<button type="button" class="btn btn-green" ng-click="tutumhide()">Tamam</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END tutummodal -->
+					<!-- PRIVACY MODAL BAŞLANGIÇ-->
+					<div id="PrivacyModal" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div id="Sure" class="modal-content">
+								<!-- BAŞLIK BAŞLANGIÇ-->
+								<div class="modal-header text-left">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 id="forgothead">Kullanım Şartları ve Gizlilik Politikası</h4>
+									<hr style="margin-top:18px; margin-bottom:25px;" />
+								</div>
+								<!-- BAŞLIK SON-->
+								<!-- İÇERİK BAŞLANGIÇ-->
+								<div ng-class="{'hiddenthing':hiddenthing == 1}">
+									<div class="modal-body">
+										<div class="scrollable">
+											<p style="height:250px;">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in sollicitudin est, in gravida lectus. Sed neque arcu, pharetra a felis eget, efficitur feugiat odio. Integer et vestibulum leo. Nullam posuere fringilla felis sit amet cursus. Proin aliquet leo rhoncus nulla faucibus dapibus. Suspendisse potenti. Suspendisse potenti.
+
+												Aenean malesuada sollicitudin quam eu mattis. Nam ornare metus eget felis faucibus, nec egestas turpis tempor. Integer sit amet est vel justo varius venenatis et non mi. Aliquam pretium mauris a lectus maximus molestie. Nullam quis pretium nunc, eu lobortis ante. Donec sed justo ultrices, scelerisque ipsum sit amet, malesuada eros. Nulla in tristique felis. Nulla dignissim, metus sit amet porta dapibus, dolor nisi pharetra mauris, sit amet congue libero nisi id turpis. Quisque sit amet velit feugiat, dapibus quam et, pulvinar nulla. Aenean sit amet ultrices elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eu quam magna. Nulla sit amet gravida quam. Curabitur at risus lobortis, pretium diam ut, iaculis dui. In auctor nibh fermentum, congue tellus sed, mollis nulla.
+
+												Donec sit amet finibus massa, et finibus nunc. Etiam suscipit massa leo, nec mattis massa ultricies sed. Vivamus felis nunc, sollicitudin eget ultrices ac, ultrices id lorem. Aliquam a velit tristique, ultrices erat eu, porta erat. Mauris at lacus vel tortor auctor tincidunt. Etiam elementum lectus id lacinia tristique. Praesent fringilla est vel blandit viverra. Proin mi justo, convallis id dignissim at, gravida eget augue. Vivamus at imperdiet eros. Etiam eu nisl accumsan, gravida leo vel, scelerisque turpis.
+
+												Nam consectetur risus ac est varius hendrerit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce et metus orci. Etiam bibendum luctus ligula id tincidunt. Proin sed diam mollis, porta est commodo, cursus tellus. Maecenas tempus consequat risus eget mollis. Morbi sit amet mollis leo. Maecenas varius purus enim, eget ultrices dui dictum et. Nam sit amet velit eleifend, posuere lectus sit amet, pharetra lorem. Pellentesque non purus auctor, porttitor elit eget, viverra magna. Donec massa lacus, rutrum sed semper ut, lacinia non eros. Donec semper massa at eros auctor pharetra. Pellentesque vitae tristique velit, vitae facilisis augue.
+
+												Cras vel ipsum sed mauris suscipit vulputate. Mauris vitae mattis turpis. Fusce ultrices, velit ac tincidunt commodo, lectus mauris placerat lacus, non iaculis nibh nibh nec dui. Quisque a eleifend purus, id vulputate eros. Vestibulum id est eget sapien pellentesque commodo a ut magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus auctor nibh quis nulla tincidunt, non ullamcorper lacus blandit. Duis turpis enim, mollis id lectus tristique, commodo porttitor velit. Vivamus eget ex porta, vehicula ipsum nec, porta enim. Sed eu velit id tortor bibendum hendrerit. Aenean efficitur risus a lacinia finibus. Phasellus molestie ex non eros euismod, et ultrices mi tempor. Suspendisse potenti. Quisque bibendum, nulla eleifend laoreet ultrices, ipsum sem interdum ex, a tristique nulla est at elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam orci velit, euismod ut aliquet a, condimentum eget eros.
+											</p>
+										</div>
+									</div>
+									<div class="modal-footer text-center">
+										<button type="submit" class="btn-green" data-dismiss="modal" id="send">Kapat</button>
+									</div>
+								</div>
+								<!-- İÇERİK İÇİN FORM SON-->
+							</div>
+						</div>
+					</div>
+					<!-- PRIVACY MODAL SON-->
+				</div>
+				<!-- END CONTAINER FLUID -->
+			</div>
+			<!-- END PAGE CONTENT -->
+			<!-- START COPYRIGHT -->
+			<div class=" container-fluid container-fixed-lg footer">
+				<div class="copyright sm-text-center">
+					<p class="small margin pull-left sm-pull-reset">
+						<span class="hint-text">Copyright &copy; 2018 </span>
+						<span class="font-montserrat">METAVERSE</span>.
+						<span class="hint-text">All rights reserved. </span>
+						<span class="sm-block"><a href="" data-toggle="modal" data-target="#PrivacyModal" class="m-l-10 m-r-10 nunito">Terms of use & Privacy Policy</a></span>
+					</p>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!-- END COPYRIGHT -->
+		</div>
+		<!-- END PAGE CONTENT WRAPPER -->
+	</div>
+	<!-- END PAGE CONTAINER -->
+
+	<div ng-init="init()"></div>
+	<!-- END PAGE LEVEL JS -->
+</body>

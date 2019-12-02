@@ -1,0 +1,406 @@
+﻿<body class="fixed-header ">
+	<link media="screen" type="text/css" rel="stylesheet" href="../Plugins/Assets/rickshaw/rickshaw.min.css">
+	<link media="screen" type="text/css" rel="stylesheet" href="../Plugins/Assets/rickshaw/src/css/graph.css">
+	<link href="../Styles/sessionliveacint.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../Plugins/Assets/d3/d3.js"></script>
+	<script type="text/javascript" src="../Plugins/Assets/rickshaw/vendor/d3.layout.min.js"></script>
+	<script type="text/javascript" src="../Plugins/Assets/rickshaw/rickshaw.min.js"></script>
+	<!-- START PAGE-CONTAINER -->
+	<div class="page-container" style="height:92vh" id="page">
+		<!-- START PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrapper ">
+			<div class="container-fluid col-sm-12 no-margin" id="header">
+				<p class="text-center nunito" style="font-size:15px;">
+					<b>Senaryo:</b> Akademik Mülakat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<b>Danışan:</b> {{initial.patname}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<b>Seans Süresi:</b> <span id="timer"></span>
+				</p>
+			</div>
+			<!-- START PAGE CONTENT -->
+			<div class="content" id="contentpad">
+				<!-- START CONTAINER FLUID -->
+				<div class=" container-fluid container-fixed-lg">
+					<div class="row">
+						<!-- İlk SÜTUN BAŞLANGIÇ-->
+						<div class="col-lg-4">
+							<!-- İlk Resim BAŞLANGIÇ-->
+							<div id="shimmerbutton">
+								<button class="btn btn-green" id="endbutton" type="button" ng-click="dataconnect()">Sensöre Bağlan</button>
+							</div>
+							<p>
+								<img src="../Images/Ac_Int_Pers.png" id="picture" />
+							</p>
+							<!-- İlk Resim SON -->
+							<!-- Yorum BAŞLANGIÇ !-->
+							<div class="row m-t-20">
+								<div class="col-lg-10">
+									<div class="view chat-view bg-white clearfix" id="commentcard">
+										<!-- Başlık BAŞLANGIÇ !-->
+										<div class="navbar-inner">
+											<div class="view-heading">
+												<h6 class="text-center" style="font-size:15px; font-family:buttonfont;">Notlar</h6>
+											</div>
+											<br />
+										</div>
+										<!-- Başlık SON  !-->
+										<!-- Yapılan Yorumlar BAŞLANGIÇ  !-->
+										<div class="chat-inner" id="my-conversation">
+											<div class="message clearfix" ng-repeat="element in messages">
+												<div ng-class="{true:'pull-left', false:'pull-right'}[element.myvar]">
+													{{element.ctime}}
+												</div>
+												<div ng-class="{true:'chat-bubble from-me', false:'chat-bubble from-them'}[element.myvar]">
+													{{ element.msg }}
+												</div>
+											</div>
+										</div>
+										<!-- Yapılan Yorumlar SON  !-->
+										<!-- Yorum Giriş BAŞLANGIÇ  !-->
+										<div class="b-t b-grey bg-white clearfix p-l-10 p-r-10">
+											<form name="form2" ng-submit="entercomment(cform)" id="form-question" role="form">
+												<div class="row">
+													<div class="col-lg-1 p-t-15">
+														<a ng-click="entercomment(cform)" class="link text-master"><i class="fa fa-plus-circle"></i></a>
+													</div>
+													<div class="col-lg-11 no-padding">
+														<input ng-model="cform.comment" type="text" class="form-control chat-input " data-chat-input="" data-chat-conversation="#my-conversation" placeholder="Yorum Yaz">
+													</div>
+												</div>
+											</form>
+										</div>
+										<!-- Yorum Giriş SON  !-->
+									</div>
+								</div>
+							</div>
+							<!-- Yorum Son !-->
+						</div>
+						<!-- İlk SÜTUN SON -->
+						<!-- İkinci SÜTUN BAŞLANGIÇ-->
+						<div class="col-lg-4">
+							<!-- Avatar Seçimi&Dropdown BAŞLANGIÇ -->
+							<div class="card card-default">
+								<div class="card-block">
+									<!-- DAVRANIŞ SEÇİMİ BAŞLANGIÇ -->
+									<div><h5 class="text-center nunito" id="header1">Katılımcılar için davranış türlerini ve her bir davranış için oranları seçiniz</h5></div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="row">
+												<div class="col-lg-4 col-lg-push-4">
+													<div class="form-group dropdown text-center" id="marginbottom10">
+														<button id="dropdown1" class="btn dropdown-toggle " type="button" data-toggle="dropdown" title="İlgili">
+															<img src="../Images/smile.png" width="32" height="32" />
+														</button>
+														<ul class="dropdown-menu">
+															<li ng-class="{'active':settings.conditions == 0}"><a ng-click="percentsup0()">0</a></li>
+															<li ng-class="{'active':settings.conditions == 1,'disabled': availables < 1}"><a ng-click="percentsup1()">1</a></li>
+															<li ng-class="{'active':settings.conditions == 2,'disabled': availables < 2}"><a ng-click="percentsup2()">2</a></li>
+															<li ng-class="{'active':settings.conditions == 3,'disabled': availables < 3}"><a ng-click="percentsup3()">3</a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-lg-4 col-lg-push-4 ">
+													<div class="form-group dropdown text-center" id="marginbottom10">
+														<button id="dropdown2" class="btn dropdown-toggle" type="button" data-toggle="dropdown" title="Reddedici">
+															<img src="../Images/angry.png" width="32" height="32" />
+														</button>
+														<ul class="dropdown-menu">
+															<li ng-class="{'active':settings.conditionr == 0} "><a ng-click="percentrej0()">0</a></li>
+															<li ng-class="{'active':settings.conditionr == 1,'disabled': availabler < 1}"><a ng-click="percentrej1()">1</a></li>
+															<li ng-class="{'active':settings.conditionr == 2,'disabled': availabler < 2}"><a ng-click="percentrej2()">2</a></li>
+															<li ng-class="{'active':settings.conditionr == 3,'disabled': availabler < 3}"><a ng-click="percentrej3()">3</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="row p-b-0">
+												<div class="col-lg-4 col-lg-push-4">
+													<p class="text-center" id="marginbottom10" style="font-size:14px">{{settings.conditions}}</p>
+												</div>
+												<div class="col-lg-4 col-lg-push-4 ">
+													<p class="text-center" id="marginbottom10" style="font-size:14px">{{settings.conditionr}}</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="row">
+												<div class="col-lg-4">
+													<div class="form-group dropdown text-center" id="marginbottom10">
+														<button id="dropdown3" class="btn dropdown-toggle" type="button" data-toggle="dropdown" title="İlgisiz">
+															<img src="../Images/uninterested.png" width="32" height="32" />
+														</button>
+														<ul class="dropdown-menu">
+															<li ng-class="{'active':settings.conditionu == 0}"><a ng-click="percentunint0()">0</a></li>
+															<li ng-class="{'active':settings.conditionu == 1,'disabled': availableu < 1}"><a ng-click="percentunint1()">1</a></li>
+															<li ng-class="{'active':settings.conditionu == 2,'disabled': availableu < 2}"><a ng-click="percentunint2()">2</a></li>
+															<li ng-class="{'active':settings.conditionu == 3,'disabled': availableu < 3}"><a ng-click="percentunint3()">3</a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-lg-4">
+													<div class="form-group dropdown text-center" id="marginbottom10">
+														<button id="dropdown4" class="btn dropdown-toggle" type="button" data-toggle="dropdown" title="Nötr">
+															<img src="../Images/Neutral.png" width="32" height="32" />
+														</button>
+														<ul class="dropdown-menu">
+															<li ng-class="{'active':settings.conditionn == 0}"><a ng-click="percentneu0()">0</a></li>
+															<li ng-class="{'active':settings.conditionn == 1,'disabled': availablen < 1}"><a ng-click="percentneu1()">1</a></li>
+															<li ng-class="{'active':settings.conditionn == 2,'disabled': availablen < 2}"><a ng-click="percentneu2()">2</a></li>
+															<li ng-class="{'active':settings.conditionn == 3,'disabled': availablen < 3}"><a ng-click="percentneu3()">3</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="row p-b-0">
+												<div class="col-lg-4">
+													<p class="text-center" id="marginbottom10" style="font-size:14px">{{settings.conditionu}}</p>
+												</div>
+												<div class="col-lg-4 ">
+													<p class="text-center" id="marginbottom10" style="font-size:14px">{{settings.conditionn}}</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr class="m-t-5 m-b-5" />
+									<!-- DAVRANIŞ SEÇİMİ SON -->
+									<!-- AVATAR SEÇİMİ BAŞLANGIÇ -->
+									<div><h6 class="text-center nunito" id="fontsize2">Her bir katılımcı için gösterilmesi istenen davranışı seçiniz.</h6></div>
+									<div class="row m-b-0">
+										<button id="personall" class="btn" ng-class="{'btn-primary': firstperson == 1 && secondperson == 1 && thirdperson == 1 }" type="button" ng-click="clickall()">
+											<img src="../Images/check-all.png" width="45" height="45" />
+										</button>
+										<button id="person1" class="btn" ng-class="{'btn-info':firstperson == 0,'btn-primary': firstperson == 1}" type="button" ng-click="clickfirst()" ng-disabled="initial.avatar1==99">
+											<img ng-src="{{findasrc(initial.avatar1)}}" width="45" height="45" />
+										</button>
+										<button id="person2" class="btn" ng-class="{'btn-info':secondperson == 0,'btn-primary': secondperson == 1}" type="button" ng-click="clicksecond()" ng-disabled="initial.avatar2==99">
+											<img ng-src="{{findbsrc(initial.avatar2)}}" width="45" height="45" />
+										</button>
+										<button id="person3" class="btn" ng-class="{'btn-info':thirdperson == 0,'btn-primary': thirdperson == 1}" type="button" ng-click="clickthird()" ng-disabled="initial.avatar3==99">
+											<img ng-src="{{findcsrc(initial.avatar3)}}" width="45" height="45" />
+										</button>
+									</div>
+									<!-- AVATAR SEÇİMİ SON -->
+									<!-- AVATAR ANİMASYON SEÇİMİ BAŞLANGIÇ -->
+									<div class="row m-t-0">
+										<button id="event1" class="btn" type="button" ng-click="clickclap()" ng-class="{'disabled': isDisabled ==1}" title="Alkış">
+											<img src="../Images/clap.png" width="45" height="45" />
+										</button>
+										<button id="event2" class="btn" type="button" ng-click="clicklaugh()" ng-class="{'disabled': isDisabled ==1}" title="Kahkaha">
+											<img src="../Images/Laugh.png" width="45" height="45" />
+										</button>
+										<button id="event3" class="btn" type="button" ng-click="clicktired()" ng-class="{'disabled': isDisabled ==1}" title="Sıkılma">
+											<img src="../Images/bored.png" width="45" height="45" />
+										</button>
+										<button id="event4" class="btn" type="button" ng-click="clickinsult()" ng-class="{'disabled': isDisabled ==1}" title="Alaycı gülme">
+											<img src="../Images/Insulting_laugh.png" width="45" height="45" />
+										</button>
+										<button id="event5" class="btn" type="button" ng-click="clickyawn()" ng-class="{'disabled': isDisabled ==1}" title="Esneme">
+											<img src="../Images/yawn.png" width="45" height="45" />
+										</button>
+										<button id="event6" class="btn" type="button" ng-click="clicksleeping()" ng-class="{'disabled': isDisabled ==1}" title="Uyuma">
+											<img src="../Images/Sleeping.png" width="45" height="45" />
+										</button>
+									</div>
+									<hr class="m-t-5 m-b-5" />
+									<!-- AVATAR ANİMASYON SEÇİMİ SON -->
+									<!-- ORTAM SESİ SEÇİMİ BAŞLANGIÇ -->
+									<div><h6 class="text-center nunito" id="fontsize2">Sanal ortamdaki dikkat dağıtıcı sesleri seçiniz.</h6></div>
+									<div class="row">
+										<div class="col-lg-2 col-lg-push-2 text-center">
+											<button id="sound1" class="btn" type="button" ng-click="whisper()" ng-class="{'disabled': isDisabled ==1}" title="Fısıltı">
+												<img src="../Images/whisper.png" width="45" height="45" />
+											</button>
+										</div>
+										<div class="col-lg-4 col-lg-push-2 text-center">
+											<button id="sound2" class="btn" type="button" ng-click="phonetalk()" ng-class="{'disabled': isDisabled ==1}" title="Telefon çalması">
+												<img src="../Images/phone_talk.png" width="45" height="45" />
+											</button>
+										</div>
+										<div class="col-lg-2 col-lg-push-2 text-center">
+											<button id="sound3" class="btn" type="button" ng-click="eating()" ng-class="{'disabled': isDisabled ==1}" title="Yiyecek">
+												<img src="../Images/eating.png" width="45" height="45" />
+											</button>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-2 col-lg-push-2  text-center">
+											<button id="sound5" class="btn" type="button" ng-click="cough()" ng-class="{'disabled': isDisabled ==1}" title="Öksürme">
+												<img src="../Images/cough.png" width="45" height="45" />
+											</button>
+										</div>
+										<div class="col-lg-4 col-lg-push-2  text-center">
+											<button id="sound6" class="btn" type="button" ng-click="message()" ng-class="{'disabled': isDisabled ==1}" title="SMS">
+												<img src="../Images/phone_text.png" width="45" height="45" />
+											</button>
+										</div>
+										<div class="col-lg-2 col-lg-push-2 text-center">
+											<button id="sound7" class="btn" type="button" ng-click="drink()" ng-class="{'disabled': isDisabled ==1}" title="İçecek">
+												<img src="../Images/drinking.png" width="45" height="45" />
+											</button>
+										</div>
+									</div>
+									<!-- ORTAM SESİ SEÇİMİ SON -->
+								</div>
+							</div>
+							<!-- Avatar&Dropdown Seçimi SON-->
+							<!-- Grafik1 BAŞLANGIÇ !-->
+							<div class="card card-default">
+								<div class="card-block p-b-5">
+									<div id="chart_container" class="row">
+										<div id="y_axis"></div>
+										<div id="chart"></div>
+									</div>
+									<div id="preview"></div>
+									<p class="text-center p-b-0 m-b-0 m-t-10" style="font-size:16px; font-family:poppinsemibold;">Nabız</p>
+								</div>
+							</div>
+							<!-- Grafik1 SON !-->
+						</div>
+						<!-- İkinci SÜTUN SON-->
+						<!-- Üçüncü SÜTUN BAŞLANGIÇ-->
+						<div class="col-lg-4">
+							<div id="endivbutton">
+								<button class="btn btn-red" id="endbutton" type="button" data-toggle="modal" data-target="#exitModal">Seansı Bitir</button>
+							</div>
+							<!-- Soruların Seçimi BAŞLANGIÇ -->
+							<uib-tabset active="0" justified="true">
+								<!-- Diyalog sekmesi BAŞLANGIÇ -->
+								<uib-tab index="0" heading="Diyalog">
+									<div class="card card-default p-b-0 m-b-0" style="height:48.3vh" id="scroll">
+										<uib-tabset type="pills" active="0" justified="true">
+											<uib-tab index="0" heading="Giriş">
+												<div class="card-block m-t-0 p-t-0 ">
+													<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left" id="qbutton1" ng-click="question000()"> <p id="fontsize">Merhaba, hoş geldin! Oldukça zorlu bir başvuru süreci sonrası güçlü adaylar arasından seçilerek bu mülakata gelmeyi başardın. Öncelikle bu zamana kadar göstermiş olduğun azmini ve çabanı tebrik ederim. Seni daha yakından tanımak istiyoruz.</p></button>
+													<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left" id="qbutton2" ng-click="question001()"> <p id="fontsize">Merhaba, hoş geldin! Birçok iddialı aday arasında seçilerek bu mülakata gelmeye hak kazandın. Başvuru belgelerini incelediğimizde eğitim hayatın boyunca çok başarılı ve azimli bir öğrenci olduğunu gördük. Bölümün hocaları olarak seni daha yakından tanımak istiyoruz.</p></button>
+													<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left" ng-click="question002()"> <p id="fontsize">Merhaba, hoş geldin! Oldukça zorlu bir hazırlık süreci sonrası yüksek lisans mülakatına çağırılan adaylardan biri olmayı başardın. Her şeyden önce bu süreçteki sabrını ve motivasyonunu takdir ederim. Lisans eğitimin boyunca her zaman dikkatimizi çeken öğrencilerden biri olmuştun. Kişisel olarak seni yakından tanımak istiyoruz.</p></button>
+												</div>
+											</uib-tab>
+											<uib-tab index="1" heading="Sorular">
+												<div class="card-block m-t-0 p-t-0">
+													<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left" id="qbutton001" ng-click="question003()"> <p id="fontsize">Bize kendinden biraz bahseder misin? Kendini güçlü bulduğun yönlerinden, gelişime açık olduğunu düşündüğün özelliklerinden bahsedip seni neden seçmeliyiz konularına değinebilirsin.</p></button>
+													<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left" id="qbutton002" ng-click="question004()"> <p id="fontsize">Bize ilgilendiğin araştırma alanlarını, bu alanı seçmende rol oynayan faktörleri ve en çok gurur duyduğun akademik başarını anlatır mısın?</p></button>
+													<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-new btn-block text-left" ng-click="question005()"> <p id="fontsize">Bize yaptığın akademik çalışma eleştirildiğinde ne hissettiğini nasıl davrandığını ve idealindeki akademik çalışma ortamını  anlatabilir misin? Sende gerginlik yaratan kişilerle nasıl bir baş etme yöntemi uygularsın?</p> </button>
+												</div>
+											</uib-tab>
+										</uib-tabset>
+									</div>
+								</uib-tab>
+								<!-- Diyalog sekmesi SON -->
+								<!-- Onay/Red sekmesi BAŞLANGIÇ -->
+								<uib-tab index="1" heading="Onay/Red">
+									<div class="card card-default p-b-0 m-b-0" style="height:48.3vh">
+										<div class="card-block p-t-30" id="scroll">
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left" id="qbutton01" ng-click="question079()"> <p id="fontsize">Hıhı.</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left" id="qbutton02" ng-click="question080()"> <p id="fontsize">Evet.</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left" id="qbutton02" ng-click="question081()"> <p id="fontsize">Doğru.</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left" id="qbutton02" ng-click="question082()"> <p id="fontsize">I-ıh.</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left" id="qbutton02" ng-click="question083()"> <p id="fontsize">Hayır.</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left" ng-click="question084()"> <p id="fontsize">Katılmıyorum.</p> </button>
+										</div>
+									</div>
+								</uib-tab>
+								<!-- Onay/Red sekmesi SON -->
+								<!-- Geri Bildirim sekmesi BAŞLANGIÇ -->
+								<uib-tab index="2">
+									<uib-tab-heading>
+										<span ng-class="{'hidden':width < 1744}">Geri Bildirim</span>
+										<span ng-class="{'hidden':width > 1745}">Geri B.</span>
+									</uib-tab-heading>
+									<div class="card card-default p-b-0 m-b-0" style="height:48.3vh">
+										<div class="card-block p-t-30" id="scroll">
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left" id="qbutton01" ng-click="question036()"> <p id="fontsize">Kendinizi çok iyi anlattınız.</p></button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left" id="qbutton02" ng-click="question037()"> <p id="fontsize">Sizinle tanışmak büyük bir memnuniyetti.</p></button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-complete btn-block text-left" id="qbutton02" ng-click="question038()"> <p id="fontsize">Başarılarınızın devamı diliyorum.</p></button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left" id="qbutton02" ng-click="question054()"> <p id="fontsize">Kendinizi biraz daha net anlatmalısınız.</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left" id="qbutton02" ng-click="question055()"> <p id="fontsize">Biraz daha tecrübeye ihtiyacınız var sanki.</p></button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-danger btn-block text-left" ng-click="question056()"> <p id="fontsize">Bu pozisyona çok uygun olduğunuzu düşünmüyorum.</p></button>
+										</div>
+									</div>
+								</uib-tab>
+								<!-- Geri Bildirim sekmesi SON -->
+								<!-- Konuşurken Bölmek sekmesi BAŞLANGIÇ -->
+								<uib-tab index="3" heading="Bölmek">
+									<div class="card card-default p-b-0 m-b-0" style="height:48.3vh">
+										<div class="card-block p-t-10" id="scroll">
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" ng-click="question072()"> <p id="fontsize">Sesinizi çok net duyamıyorum. Daha yüksek sesle konuşur musunuz?</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" ng-click="question073()"> <p id="fontsize">Bir dakika lütfen, bir süredir ne dediğinizi anlayamıyorum. Tane tane konuşur musunuz?</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" ng-click="question074()"> <p id="fontsize">Pardon sanırım çok heyecanlısınız. Biraz daha sakin anlatır mısınız?</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" ng-click="question075()"> <p id="fontsize">Çok özür dileyerek böleceğim, biraz daha net konuşur musunuz, anlam bütünlüğü kurmakta güçlük çekiyorum.</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" ng-click="question076()"> <p id="fontsize">Pardon ama baya karışık anlatıyorsunuz. Söyleyeceklerinizi daha kısa ve öz ifade edebilir misiniz?</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left m-b-10" ng-click="question077()"> <p id="fontsize">Ne demek istediğinizi tam anlamadım. Konuyu biraz daha açar mısınız?</p> </button>
+											<button ng-class="{'disabled': isDisabled ==1}" class="btn btn-info btn-block text-left" ng-click="question078()"> <p id="fontsize">Tüm anlatacaklarınız bu kadar mıydı? Biraz daha detaylı anlatabilir misiniz?</p> </button>
+										</div>
+									</div>
+								</uib-tab>
+								<!-- Konuşurken Bölmek sekmesi SON -->
+							</uib-tabset>
+							<!-- Soruların Seçimi SON -->
+							<!-- Grafik2 BAŞLANGIÇ !-->
+							<div class="card card-default" id="Temp">
+								<div class="card-block p-b-5">
+									<div id="chart_container" class="row">
+										<div id="y_axis2"></div>
+										<div id="chart2"></div>
+									</div>
+									<div id="preview2"></div>
+									<p class="text-center p-b-0 m-b-0 m-t-10" style="font-size:16px; font-family:poppinsemibold;">Deri İletkenliği</p>
+								</div>
+							</div>
+							<!-- Grafik2 SON !-->
+						</div>
+						<!-- Üçüncü SÜTUN SON-->
+					</div>
+
+					<!-- START exitmodal -->
+					<div id="exitModal" class="modal fade blured" role="dialog">
+						<div class="modal-dialog">
+							<div id="Sure" class="modal-content">
+								<!-- SEÇİLİ AVATAR İSMİ BAŞLANGIÇ-->
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="text-left nunito"><span style="font-family:poppinsemibold;">Çıkış</span></h4>
+								</div>
+								<!-- SEÇİLİ AVATAR İSMİ SON-->
+								<!-- SEÇİLİ AVATAR SEANS DETAYLARI BAŞLANGIÇ-->
+								<div class="modal-body">
+									<div>
+										<!-- BİLGİLER BAŞLANGIÇ-->
+										<p></p>
+										<p style="font-size:14px;">Seansı bitirmek istediğinizden emin misiniz?</p>
+										<!-- BİLGİLER SON-->
+									</div>
+								</div>
+								<!-- SEÇİLİ AVATAR SEANS DETAYLARI SON-->
+								<div class="modal-footer">
+									<div class="col-12 text-center">
+										<button type="button" class="btn btn-green" ng-click="End()">Çıkış Yap</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END exitmodal -->
+				</div>
+				<!-- END CONTAINER FLUID -->
+			</div>
+			<!-- END PAGE CONTENT -->
+			<!-- START COPYRIGHT -->
+			<div class=" container-fluid  container-fixed-lg footer">
+				<div class="copyright sm-text-center">
+					<p class="small no-margin pull-left sm-pull-reset nunito">
+						<span class="hint-text nunito">Copyright &copy; 2018 </span>
+						<span class="nunito">METAVERSE</span>.
+						<span class="hint-text nunito">All rights reserved. </span>
+						<span class="sm-block"><a href="" class="m-l-10 m-r-10 nunito">Terms of use</a> <span class="muted">|</span> <a href="" class="m-l-10 nunito">Privacy Policy</a></span>
+					</p>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!-- END COPYRIGHT -->
+		</div>
+		<!-- END PAGE CONTENT WRAPPER -->
+	</div>
+	<!-- END PAGE CONTAINER -->
+	<div ng-init="init()"></div>
+	<!-- END PAGE LEVEL JS -->
+
+</body>

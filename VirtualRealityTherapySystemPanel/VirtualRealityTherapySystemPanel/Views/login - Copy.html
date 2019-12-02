@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body class="fixed-header">
+	<link href="../Styles/login.css" rel="stylesheet" type="text/css" />
+	<div class="tab">
+		<button class="btn btn-primary btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Terapist')">Terapist</button>
+		<button class="btn btn-primary btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Danisan')">Danışan</button>
+	</div>
+	<div id="Terapist" class="login-wrapper ">
+		<!-- START Login Background Pic Wrapper-->
+		<div class="bg-pic">
+			<!-- START Background Pic-->
+			<img src="../Images/stock.jpg" class="lazy">
+			<!-- END Background Pic-->
+			<!-- START Background Caption-->
+			<!--<div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
+				<h2 class="semi-bold text-white">
+					Pages make it easy to enjoy what matters the most in the life
+				</h2>
+				<p class="small">
+					images Displayed are solely for representation purposes only, All work copyright of respective owner, otherwise � 2013-2014 REVOX.
+				</p>
+			</div>-->
+			<!-- END Background Caption-->
+		</div>
+		<!-- END Login Background Pic Wrapper-->
+		<!-- START Login Right Container-->
+		<div class="sm-pull-bottom pull-bottom login-container bg-white">
+			<div class="tab">
+				<button class="btn btn-primary btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Terapist')">Terapist</button>
+				<button class="btn btn-primary btn-cons m-t-10 tablinks" onclick="openlogin(event, 'Danisan')">Danışan</button>
+			</div>
+			<div ng-init="init()"></div>
+			<div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
+				<img src="../Images/VRSOCIAL_logo.png" width="137" height="42">
+				<p class="p-t-35">VR Panele Hoşgeldiniz!</p>
+				<p class="p-t-10">Terapist sistemi için kullanıcı adınız ile giriş yapın</p>
+				<!-- START Login Form -->
+				<form name="form" ng-submit="userLogin(Login)" id="form-login" class="p-t-15" role="form">
+					<!-- START Form Control-->
+					<div class="form-group form-group-default">
+						<label>Kullanıcı Adı</label>
+						<div class="controls">
+							<input type="text" ng-model="Login.Username" name="username" id="username" placeholder="User Name" class="form-control" required>
+						</div>
+					</div>
+					<!-- END Form Control-->
+					<!-- START Form Control-->
+					<div class="form-group form-group-default">
+						<label>Şifre</label>
+						<div class="controls">
+							<input type="password" class="form-control" ng-model="Login.Password" name="password" id="password" placeholder="Credentials" required>
+						</div>
+					</div>
+					<!-- START Form Control-->
+					<div class="row">
+						<div class="col-md-6 no-padding sm-p-l-10">
+							<a href="../#!/register" class="text-info">Yeni Hesap Oluştur</a>
+						</div>
+						<div class="col-md-6 d-flex align-items-center justify-content-end">
+							<a href="" data-toggle="modal" data-target="#resetModal" class="text-info pull-right">Şifremi Unuttum</a>
+						</div>
+					</div>
+					<!--<div class="g-recaptcha" data-sitekey="6LfuylsUAAAAAG51_c5UNXG8E5Jkfg17bWiuXToV">-->
+					<!-- 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI -->
+					<!--</div>-->
+					<!-- END Form Control-->
+					<div class="row">
+						<button class="btn btn-primary btn-cons m-t-10 pull-right" type="submit" ng-click="toggle()">Giriş</button>
+					</div>
+				</form>
+				<!--END Login Form-->
+				<div class="pull-bottom sm-pull-bottom">
+					<div class="m-b-30 p-r-80 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix">
+						<div class="col-sm-3 col-md-2 no-padding">
+							<img alt="" class="m-t-5" height="21" src="../Images/Metaverse_logo.png" width="81">
+						</div>
+						<!--<div class="col-sm-9 no-padding m-t-10">
+				<p>
+					<small>
+						Create a pages account. If you have a facebook account, log into it for this
+						process. Sign in with <a href="#" class="text-info">Facebook</a> or <a href="#"
+																							   class="text-info">Google</a>
+					</small>
+				</p>
+			</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END Login Right Container-->
+	</div>
+	<!-- ŞİFRE YENİLEME MODAL BAŞLANGIÇ-->
+	<div id="resetModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div id="Sure" class="modal-content">
+				<!-- BAŞLIK BAŞLANGIÇ-->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4>Şifre unutulmuş</h4>
+				</div>
+				<!-- BAŞLIK SON-->
+				<!-- EMAİL İÇİN FORM BAŞLANGIÇ-->
+				<form name="form" ng-submit="resetpass(emailform)" novalidate>
+					<div ng-class="{'hiddenthing':hiddenthing == 1}">
+						<div class="modal-body">
+							<div>
+								<!-- EMAİL BAŞLANGIÇ-->
+								<h6 style="font-size:15px;">E-posta adresinize şifre yenileme linki gönderilecek</h6>
+								<div class="form-group form-group-default">
+									<label>E-posta</label>
+									<div class="controls">
+										<input type="text" ng-model="emailform.email" name="email" id="email" placeholder="E-posta adresinizi girin" class="form-control" required>
+									</div>
+								</div>
+								<!-- EMAİL SON-->
+							</div>
+							<div ng-class="{'hiddenthing':(hiddenthing != 2)}">
+								<p class="alert-danger">E-posta adresi sisteme kayıtlı değil.</p>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary pull-left">Gönder</button>
+							<button ng-click="erase()" type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
+						</div>
+					</div>
+				</form>
+				
+				<div ng-class="{'hiddenthing':(hiddenthing == 0)||(hiddenthing == 2)}">
+					<div class="modal-body">
+						<p></p>
+						<h6 style="font-size:15px;">Lütfen e-posta adresinize gelem mail aracılığıyla şifrenizi değiştiriniz.</h6>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Geri</button>
+					</div>
+				</div>
+				
+
+				<!-- EMAİL İÇİN FORM SON-->
+			</div>
+		</div>
+	</div>
+	<!-- ŞİFRE YENİLEME MODAL BAŞLANGIÇ-->
+	<div id="Danisan" class="login-wrapper">
+		<!-- START Login Background Pic Wrapper-->
+		<div class="bg-pic">
+			<!-- START Background Pic-->
+			<img src="../Images/stock2.jpg" class="lazy">
+			<!-- END Background Pic-->
+			<!-- START Background Caption-->
+			<!--<div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
+				<h2 class="semi-bold text-white">
+					Pages make it easy to enjoy what matters the most in the life
+				</h2>
+				<p class="small">
+					images Displayed are solely for representation purposes only, All work copyright of respective owner, otherwise � 2013-2014 REVOX.
+				</p>
+			</div>-->
+			<!-- END Background Caption-->
+		</div>
+		<!-- END Login Background Pic Wrapper-->
+		<!-- START Login Right Container-->
+		<div class="pull-bottom sm-pull-bottom login-container bg-white">
+			<div class="tab">
+				<button class="tablinks btn btn-primary btn-cons m-t-10" onclick="openlogin(event, 'Terapist')">Terapist</button>
+				<button class="tablinks btn btn-primary btn-cons m-t-10" onclick="openlogin(event, 'Danisan')">Danışan</button>
+			</div>
+			<div ng-init="init()"></div>
+			<div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
+				<img src="../Images/VRSOCIAL_logo.png" width="137" height="42">
+				<p class="p-t-35">VR Panele Hoşgeldiniz!</p>
+				<p class="p-t-10">Danışan sistemi için kullanıcı adınız ile giriş yapın</p>
+				<!-- START Login Form -->
+				<form name="form" ng-submit="hastaLogin(Login2)" id="form-login" class="p-t-15" role="form">
+					<!-- START Form Control-->
+					<div class="form-group form-group-default">
+						<label>Kullanıcı Adı</label>
+						<div class="controls">
+							<input type="text" ng-model="Login2.Username" name="username" id="username" placeholder="User Name" class="form-control" required>
+						</div>
+					</div>
+					<!-- END Form Control-->
+					<!-- START Form Control-->
+					<div class="form-group form-group-default">
+						<label>Şifre</label>
+						<div class="controls">
+							<input type="password" ng-model="Login2.Password" name="password" id="password" placeholder="Credentials" class="form-control" required>
+						</div>
+					</div>
+					<!-- START Form Control-->
+					<div class="row">
+						<div class="col-md-6 no-padding sm-p-l-10">
+							<button class="btn btn-primary btn-cons m-t-10" type="submit">Giriş</button>
+						</div>
+						<div class="col-md-6 p-t-15 ">
+							<a href="" data-toggle="modal" data-target="#resetModalD" class="text-info pull-right">Şifremi Unuttum</a>
+						</div>
+					</div>
+					<!-- END Form Control-->
+
+				</form>
+				<!--END Login Form-->
+				<div class="pull-bottom sm-pull-bottom">
+					<div class="m-b-30 p-r-80 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix">
+						<div class="col-sm-3 col-md-2 no-padding">
+							<img alt="" class="m-t-5" data-src="../Images/pages_icon.png" data-src-retina="../Images/pages_icon_2x.png" height="60" src="../Images/pages_icon.png" width="60">
+						</div>
+						<div class="col-sm-9 no-padding m-t-10">
+							<p>
+								<small>
+									Create a pages account. If you have a facebook account, log into it for this
+									process. Sign in with <a href="" class="text-info">Facebook</a> or <a href=""
+																										  class="text-info">Google</a>
+								</small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END Login Right Container-->
+	</div>
+
+	<!-- DANIŞAN ŞİFRE YENİLEME MODAL BAŞLANGIÇ-->
+	<div id="resetModalD" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div id="Sure" class="modal-content">
+				<!-- BAŞLIK BAŞLANGIÇ-->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4>Şifre unutulmuş</h4>
+				</div>
+				<!-- BAŞLIK SON-->
+				<!-- EMAİL İÇİN FORM BAŞLANGIÇ-->
+				<form name="form" ng-submit="resetpassp(emailform2)" novalidate>
+					<div ng-class="{'hiddenthing':hiddenthingp == 1}">
+						<div class="modal-body">
+							<div>
+								<!-- EMAİL BAŞLANGIÇ-->
+								<h6 style="font-size:15px;">E-posta adresinize şifre yenileme linki gönderilecek</h6>
+								<div class="form-group form-group-default">
+									<label>E-posta</label>
+									<div class="controls">
+										<input type="text" ng-model="emailform2.email" name="email" id="email" placeholder="E-posta adresinizi girin" class="form-control" required>
+									</div>
+								</div>
+								<!-- EMAİL SON-->
+							</div>
+							<div ng-class="{'hiddenthing':(hiddenthingp != 2)}">
+								<p class="alert-danger">E-posta adresi sisteme kayıtlı değil.</p>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary pull-left">Gönder</button>
+							<button ng-click="erase_p()" type="button" class="btn btn-default" data-dismiss="modal">İptal</button>
+						</div>
+					</div>
+				</form>
+
+				<div ng-class="{'hiddenthing':(hiddenthingp == 0)||(hiddenthingp == 2)}">
+					<div class="modal-body">
+						<p></p>
+						<h6 style="font-size:15px;">Lütfen e-posta adresinize gelem mail aracılığıyla şifrenizi değiştiriniz.</h6>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Geri</button>
+					</div>
+				</div>
+				<!-- EMAİL İÇİN FORM SON-->
+			</div>
+		</div>
+	</div>
+	<!-- DANIŞAN ŞİFRE YENİLEME MODAL BAŞLANGIÇ-->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script>
+		function openlogin(evt, usertype) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("login-wrapper");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(usertype).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+	</script>
+
+	<!--<script>
+	$(function()
+	{
+	  $('#form-login').validate()
+	})
+	</script>-->
+</body>
+</html>
+
+
+

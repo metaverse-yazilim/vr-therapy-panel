@@ -1,0 +1,97 @@
+﻿.nunito {
+    font-family: nunito;
+}
+
+
+@media screen and (max-height:749px) and (min-height:650px) {
+    .centerform {
+        position: absolute;
+        width: 30%;
+        top: 9%;
+        left: 35%;
+        padding: 10px;
+    }
+
+    body {
+        overflow: hidden;
+    }
+}
+.btn-green {
+    background-color: #27b8f7;
+    color: white;
+    border-radius: 2px;
+    font-family: buttonfont;
+}
+
+    .btn-green:hover {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:visited {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+    .btn-green:focus {
+        background-color: #27b8f7;
+        color: white;
+    }
+
+    .btn-green:active {
+        background-color: #54c5f6;
+        color: white;
+    }
+
+.btn:focus, .btn:focus:active, .btn.active:focus {
+    color: white;
+}
+
+
+
+
+@media screen and (max-height:649px) {
+    .centerform {
+        position: absolute;
+        width: 30%;
+        top: 3%;
+        left: 35%;
+        padding: 5px;
+    }
+
+    body {
+        overflow: hidden;
+    }
+}
+
+
+.centerform {
+    position: absolute;
+    width: 30%;
+    top: 13%;
+    left: 35%;
+    padding: 10px;
+}
+
+#date {
+    margin-top:6px;
+}
+
+
+
+#Faketable {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0;
+    width: 50vw;
+    padding: 1px;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+
+#send {
+    width: 150px;
+    height: 50px;
+    border: none;
+}

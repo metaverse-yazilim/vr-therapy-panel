@@ -1,0 +1,16 @@
+﻿.pagination > .disabled > a {
+    pointer-events: none;
+}
+
+.center-table {
+    margin: auto;
+    margin-top: 1%;
+    width: 50vw;
+    padding: 1px;
+}
+
+#basicTable td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*font-size: 15px;*/
+}
